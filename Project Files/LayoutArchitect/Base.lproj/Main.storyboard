@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="LayoutArchitect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkJ-v9-veR">
+                                <rect key="frame" x="160" y="139" width="280" height="320"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="WTo-aT-q5q"/>
+                                    <constraint firstAttribute="height" constant="320" id="prc-MO-SHd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHB-QN-3iI" customClass="SomeXibView" customModule="LayoutArchitect" customModuleProvider="target">
+                                <rect key="frame" x="240.5" y="28" width="120" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="g3u-An-JyW"/>
+                                    <constraint firstAttribute="height" constant="66" id="zK5-5K-ay9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vHB-QN-3iI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Iwr-uF-6gH"/>
+                            <constraint firstAttribute="centerX" secondItem="vHB-QN-3iI" secondAttribute="centerX" constant="-0.5" id="Vn3-Dy-vPV"/>
+                            <constraint firstAttribute="centerY" secondItem="rkJ-v9-veR" secondAttribute="centerY" constant="0.5" id="XMP-E3-5Kh"/>
+                            <constraint firstAttribute="centerX" secondItem="rkJ-v9-veR" secondAttribute="centerX" id="uPJ-KR-QfN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aView" destination="rkJ-v9-veR" id="7Qa-JK-9Jv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-96" y="203"/>
+        </scene>
+    </scenes>
+</document>
