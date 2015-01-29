@@ -51,7 +51,7 @@ public class XibBasedView : UIView {
             if let view = possibleView {
                 self.nibView = view
                 view.preppedForAutoLayout(inView: self)
-                Grunt.construct(Blueprint.inset(edges: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), forView: view), inView: self)
+                Grunt.construct(Blueprint.inset(edges: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), of: view), inView: self)
             }
         }
         

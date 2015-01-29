@@ -20,7 +20,7 @@ extension Architect {
     
     public class func imageView (inView superview: UIView, withInsets insets: UIEdgeInsets) -> UIImageView {
         var imageView = UIImageView.autoLayoutView(inView: superview)
-        Grunt.construct(Blueprint.inset(edges: insets, forView: imageView), inView: superview)
+        Grunt.construct(Blueprint.inset(edges: insets, of: imageView), inView: superview)
         return imageView as UIImageView
     }
     

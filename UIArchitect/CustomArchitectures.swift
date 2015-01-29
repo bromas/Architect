@@ -32,7 +32,7 @@ extension Architect {
         let possibleViewSubclass = subclass as? UIView
         if let viewSubclass = possibleViewSubclass {
             viewSubclass.preppedForAutoLayout(inView: superview)
-            Grunt.construct(Blueprint.inset(edges: insets, forView: viewSubclass), inView: superview)
+            Grunt.construct(Blueprint.inset(edges: insets, of: viewSubclass), inView: superview)
         }
         return subclass
     }

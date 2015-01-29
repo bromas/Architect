@@ -21,7 +21,7 @@ extension Architect {
     
     public class func view (inView superview: UIView, withInsets insets: UIEdgeInsets) -> UIView {
         var view = UIView.autoLayoutView(inView: superview)
-        Grunt.construct(Blueprint.inset(edges: insets, forView: view), inView: superview)
+        Grunt.construct(Blueprint.inset(edges: insets, of: view), inView: superview)
         return view
     }
     

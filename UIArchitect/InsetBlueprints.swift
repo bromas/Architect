@@ -20,7 +20,7 @@ public enum InsetDirection {
 
 extension Blueprint {
     
-    public class func inset(#edges: UIEdgeInsets, forView view: UIView) -> Blueprints {
+    public class func inset(#edges: UIEdgeInsets, of view: UIView) -> Blueprints {
         
         self.assertSuperview(forView: view)
         var constraints = [AnyObject]()
@@ -92,7 +92,7 @@ extension Blueprint {
         return constraints as Blueprints
     }
     
-    public class func inset (#origin: (x: Float, y: Float), ofView view: UIView) -> Blueprints {
+    public class func inset (#origin: (x: Float, y: Float), of view: UIView) -> Blueprints {
         
         self.assertSuperview(forView: view)
         var constraints = [AnyObject]()

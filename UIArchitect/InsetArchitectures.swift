@@ -28,7 +28,7 @@ extension Grunt {
     public class func inset (#origin: (x: Float, y: Float), of view: UIView) -> Void {
         Blueprint.assertSuperview(forView: view)
         if let hasSuper = view.superview {
-            hasSuper.addConstraints(Blueprint.inset(origin: origin, ofView: view))
+            hasSuper.addConstraints(Blueprint.inset(origin: origin, of: view))
         }
     }
     

@@ -22,13 +22,13 @@ extension Grunt {
 //        view.addConstraints(constraints)
 //    }
     
-    public class func size(#width: Float, ofView view: UIView) -> Void {
+    public class func size(#width: Float, of view: UIView) -> Void {
         var constraints = [NSLayoutConstraint]()
         constraints += Blueprint.size(view, with: [.Width: width])
         view.addConstraints(constraints)
     }
     
-    public class func size(#height: Float, ofView view: UIView) -> Void {
+    public class func size(#height: Float, of view: UIView) -> Void {
         var constraints = [NSLayoutConstraint]()
         constraints += Blueprint.size(view, with: [.Height: height])
         view.addConstraints(constraints)
