@@ -76,4 +76,18 @@ Architect.label(inView: self.view) {
 }
 ```
 
+#### Blueprint
+
+The Blueprint class allows developers to obtain the NSLayoutConstraints normally generated and applied by the Constrain calls in order to assigned constraints to local variables for future manipulation.
+
+```swift
+let constraints = Blueprint.inset(label, with: [.Left: 10, .Top: 10, .Right: 40])
+let topConstraint = constraints[1]
 ```
+
+####WIP/TODO
+
+Currently UITextField does not have a constructor
+Blueprint should share an API with Constrain
+There are no Align Blueprints/Constrain methods
+
