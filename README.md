@@ -88,6 +88,8 @@ let topConstraint = constraints[1]
 ####WIP/TODO
 
 Currently UITextField does not have a constructor
+
 Blueprint should share an API with Constrain
+
 There are no Align Blueprints/Constrain methods
 
