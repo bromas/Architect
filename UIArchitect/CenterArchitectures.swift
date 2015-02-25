@@ -11,12 +11,16 @@ import UIKit
 
 extension Grunt {
     
-    public class func center(view: UIView, from: UIView, with options: [BlueprintCoordinate: Float]) -> Void {
-        view.superview?.addConstraints(Blueprint.center(view, fromView: from, with: options))
+    public class func center(view: UIView, from: UIView, with options: [BlueprintCoordinate: Float]) -> [NSLayoutConstraint] {
+        let constraints = Blueprint.center(view, fromView: from, with: options)
+        view.superview?.addConstraints(constraints)
+        return constraints
     }
     
-    public class func center(view: UIView, with options: [BlueprintCoordinate: Float]) -> Void {
-        view.superview?.addConstraints(Blueprint.center(view, fromView: view.superview!, with: options))
+    public class func center(view: UIView, with options: [BlueprintCoordinate: Float]) -> [NSLayoutConstraint] {
+        let constraints = Blueprint.center(view, fromView: view.superview!, with: options)
+        view.superview?.addConstraints(constraints)
+        return constraints
     }
     
 }
