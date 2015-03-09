@@ -43,13 +43,13 @@ extension Grunt {
         }
     }
     
-    public class func pin (view: UIView, to: UIView, with options: [BlueprintGuide: (toEdge: BlueprintGuide, magnitude: Float)]) -> Void {
+    public class func pin(view: UIView, to: UIView, with options: [BlueprintGuide: (toEdge: BlueprintGuide, magnitude: Float)]) -> Void {
         if let hasSuper = view.superview {
             hasSuper.addConstraints(Blueprint.pin(view, toView: to, with: options))
         }
     }
     
-    public class func pin (view: UIView, to: UIView, withExtendedOptions options: [BlueprintGuide: (toEdge: BlueprintGuide, relation: BlueprintRelation, magnitude: Float, priority: BlueprintPriority)]) -> Void {
+    public class func pin(view: UIView, to: UIView, withExtendedOptions options: [BlueprintGuide: (toEdge: BlueprintGuide, relation: BlueprintRelation, magnitude: Float, priority: BlueprintPriority)]) -> Void {
         if let hasSuper = view.superview {
             hasSuper.addConstraints(Blueprint.pin(view, toView: to, withExtendedOptions: options))
         }

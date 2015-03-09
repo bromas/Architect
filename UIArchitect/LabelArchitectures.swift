@@ -29,14 +29,14 @@ public class ArchitectLabel : UILabel {
 
 extension Architect {
     
-    public class func label (inView view: UIView, construct: ((label: UILabel) -> Void)) -> UILabel {
-        return self.custom(ArchitectLabel(), inView: view, construct: construct) as UILabel
+    public class func label (inView view: UIView, construct: ((label: UILabel) -> Void)) -> ArchitectLabel {
+        return self.custom(ArchitectLabel(), inView: view, construct: construct)
     }
     
-    public class func label (inView view: UIView) -> UILabel {
+    public class func label (inView view: UIView) -> ArchitectLabel {
         var label = UILabel()
         label.numberOfLines = 0
-        return self.custom(ArchitectLabel(), inView: view) as UILabel
+        return self.custom(ArchitectLabel(), inView: view)
     }
     
 }

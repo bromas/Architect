@@ -16,12 +16,12 @@ class SomeXibView : XibBasedView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        theLabel?.text = "storyboard"
+        theLabel?.text = "From Storyboard"
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        theLabel?.text = "code"
+        theLabel?.text = "From Code"
     }
     
     override init() {

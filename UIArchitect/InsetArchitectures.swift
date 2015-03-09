@@ -10,26 +10,18 @@ import Foundation
 import UIKit
 
 extension Grunt {
-    
-    public class func inset (view: UIView, with options: [BlueprintGuide: Float]) -> Void {
-        Blueprint.assertSuperview(forView: view)
-        if let hasSuper = view.superview {
-            hasSuper.addConstraints(Blueprint.inset(view, with: options))
-        }
-    }
-    
-    public class func inset (view: UIView, withExtendedOptions options: [BlueprintGuide: (relation: BlueprintRelation, magnitude: Float, priority: BlueprintPriority)]) -> Void {
-        Blueprint.assertSuperview(forView: view)
-        if let hasSuper = view.superview {
-            hasSuper.addConstraints(Blueprint.inset(view, withExtendedOptions: options))
-        }
-    }
-    
-    public class func inset (#origin: (x: Float, y: Float), of view: UIView) -> Void {
-        Blueprint.assertSuperview(forView: view)
-        if let hasSuper = view.superview {
-            hasSuper.addConstraints(Blueprint.inset(origin: origin, of: view))
-        }
-    }
-    
+  
+  public class func inset (view: UIView, with options: [BlueprintGuide: Float]) -> [NSLayoutConstraint] {
+    Blueprint.assertSuperview(forView: view)
+    let constraints = Blueprint.inset(view, with: options)
+    view.addConstraints(constraints)
+    return constraints
+  }
+  
+  public class func inset (view: UIView, withExtendedOptions options: [BlueprintGuide: (relation: BlueprintRelation, magnitude: Float, priority: BlueprintPriority)]) -> [NSLayoutConstraint] {
+    Blueprint.assertSuperview(forView: view)
+    let constraints = Blueprint.inset(view, withExtendedOptions: options)
+    view.addConstraints(constraints)
+    return constraints
+  }
 }

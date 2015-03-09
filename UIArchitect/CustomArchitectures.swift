@@ -11,14 +11,14 @@ import UIKit
 
 extension Architect {
   
-  public class func custom <T>(customView: T, inView view: UIView, construct: ((view: T) -> Void)) -> T {
+  public class func custom<T>(customView: T, inView view: UIView, construct: ((view: T) -> Void)) -> T {
     let possibleViewSubclass = customView as? UIView
     possibleViewSubclass?.preppedForAutoLayout(inView: view)
     construct(view: customView)
     return customView
   }
   
-  public class func custom <T>(customView: T, inView view: UIView) -> T {
+  public class func custom<T>(customView: T, inView view: UIView) -> T {
     let possibleViewSubclass = customView as? UIView
     if let viewSubclass = possibleViewSubclass {
       viewSubclass.preppedForAutoLayout(inView: view)

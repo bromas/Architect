@@ -60,6 +60,9 @@
 		D3D49396196F92BC00432A50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D49394196F92BC00432A50 /* Main.storyboard */; };
 		D3D49398196F92BC00432A50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D49397196F92BC00432A50 /* Images.xcassets */; };
 		D3D493A4196F92BC00432A50 /* LayoutArchitectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D493A3196F92BC00432A50 /* LayoutArchitectTests.swift */; };
+		D3E581B11AAD5BC300D5A933 /* EmbedArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E581B01AAD5BC300D5A933 /* EmbedArchitectures.swift */; };
+		D3E581B31AADF9DC00D5A933 /* DirectionalLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E581B21AADF9DC00D5A933 /* DirectionalLayouts.swift */; };
+		D3E581B51AAE1EA300D5A933 /* EmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E581B41AAE1EA300D5A933 /* EmbeddedController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,9 @@
 		D3D493C2196F92F300432A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3D493C3196F92F300432A50 /* UIArchitectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIArchitectTests.swift; sourceTree = "<group>"; };
 		D3D493D6196F933000432A50 /* Architect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Architect.swift; sourceTree = "<group>"; };
+		D3E581B01AAD5BC300D5A933 /* EmbedArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedArchitectures.swift; sourceTree = "<group>"; };
+		D3E581B21AADF9DC00D5A933 /* DirectionalLayouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionalLayouts.swift; sourceTree = "<group>"; };
+		D3E581B41AAE1EA300D5A933 /* EmbeddedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedController.swift; sourceTree = "<group>"; };
 		D3FF7B52198D400C0069A08C /* XibBasedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibBasedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +242,7 @@
 		D3C6E3E11970BDA0007A3990 /* Architectures */ = {
 			isa = PBXGroup;
 			children = (
+				D3E581AF1AAD5B9E00D5A933 /* Controllers */,
 				D3C6E3FA19738365007A3990 /* UIViewSubclasses */,
 				D3C6E3F019735BF1007A3990 /* SizeArchitectures.swift */,
 				D3C6E3FF197391A0007A3990 /* CenterArchitectures.swift */,
@@ -252,6 +259,7 @@
 				D3C6E3E51970CFF3007A3990 /* CenterBlueprints.swift */,
 				D3C6E3DF1970BA24007A3990 /* InsetBlueprints.swift */,
 				D3C6E3E91970ED3E007A3990 /* PinBlueprints.swift */,
+				D3E581B21AADF9DC00D5A933 /* DirectionalLayouts.swift */,
 			);
 			name = Blueprints;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 				D3C6E3ED19718E6C007A3990 /* CustomViews */,
 				D3D49390196F92BC00432A50 /* AppDelegate.swift */,
 				D3D49392196F92BC00432A50 /* ViewController.swift */,
+				D3E581B41AAE1EA300D5A933 /* EmbeddedController.swift */,
 				D3D49394196F92BC00432A50 /* Main.storyboard */,
 				D3D49397196F92BC00432A50 /* Images.xcassets */,
 				D3D4938E196F92BC00432A50 /* Supporting Files */,
@@ -394,6 +403,14 @@
 				D3D493C2196F92F300432A50 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3E581AF1AAD5B9E00D5A933 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D3E581B01AAD5BC300D5A933 /* EmbedArchitectures.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -603,6 +620,7 @@
 				D32BAFD01A33FED500894407 /* CenterArchitectures.swift in Sources */,
 				D32BAFD81A33FEDC00894407 /* Blueprint.swift in Sources */,
 				D32BAFCA1A33FED500894407 /* ViewArchitectures.swift in Sources */,
+				D3E581B31AADF9DC00D5A933 /* DirectionalLayouts.swift in Sources */,
 				D32BAFCD1A33FED500894407 /* TextViewArchitectures.swift in Sources */,
 				D32BAFDA1A33FEE000894407 /* SizeBlueprints.swift in Sources */,
 				D32BAFD51A33FEDC00894407 /* UIView_Architect.swift in Sources */,
@@ -610,6 +628,7 @@
 				D32BAFD21A33FED500894407 /* PinArchitectures.swift in Sources */,
 				D32BAFD61A33FEDC00894407 /* Architect.swift in Sources */,
 				D32BAFDC1A33FEE000894407 /* InsetBlueprints.swift in Sources */,
+				D3E581B11AAD5BC300D5A933 /* EmbedArchitectures.swift in Sources */,
 				D32BAFCB1A33FED500894407 /* ImageViewArchitectures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +653,7 @@
 				D3D49393196F92BC00432A50 /* ViewController.swift in Sources */,
 				D3C6E4071973A96C007A3990 /* Sample2.swift in Sources */,
 				D3D49391196F92BC00432A50 /* AppDelegate.swift in Sources */,
+				D3E581B51AAE1EA300D5A933 /* EmbeddedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,6 +946,7 @@
 				D32BAFC51A33FEC500894407 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D32BAFC61A33FEC500894407 /* Build configuration list for PBXNativeTarget "ArchitectTests" */ = {
 			isa = XCConfigurationList;
@@ -934,6 +955,7 @@
 				D32BAFC81A33FEC500894407 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3D49386196F92BC00432A50 /* Build configuration list for PBXProject "LayoutArchitect" */ = {
 			isa = XCConfigurationList;
