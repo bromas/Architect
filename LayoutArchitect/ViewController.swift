@@ -22,12 +22,21 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     addScrollView(self.aView)
-    embedSomething()
+    let constraint = embedSomething()
+    
+    UIView.performWithoutAnimation() {
+      self.view.layoutIfNeeded()
+    }
+    
+    UIView.animateWithDuration(2.0) {
+      constraint.constant = 80
+      self.view.layoutIfNeeded()
+    }
   }
   
   func addScrollView (toView: UIView) -> Void {
     
-    self.scroll = Architect.custom(UIScrollView(), inView: toView) { [unowned self] in
+    self.scroll = Architect.custom(UIScrollView(), inView: toView) {
       Grunt.inset($0, with: [.Top: 0, .Left: 0, .Bottom: 0, .Right: 0])
       
       let yellowView = Architect.custom(ColorView(color: UIColor.yellowColor()), inView: $0) {
@@ -94,7 +103,7 @@ class ViewController: UIViewController {
     var constraint: NSLayoutConstraint?
     Architect.embed(controller, withParent: self, inView: self.view) {
       $0.view.backgroundColor = UIColor.darkGrayColor()
-      constraint = Constrain.inset($0.view, with: [.Left: 30, .Bottom: -200, .Right: 30])[1]
+      constraint = Constrain.inset($0.view, with: [.Left: 20, .Right: 30, .Bottom: 10])[2]
       Constrain.size($0.view, with: [.Height: 200])
     }
     return constraint!

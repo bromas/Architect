@@ -40,7 +40,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="aView" destination="rkJ-v9-veR" id="7Qa-JK-9Jv"/>
+                        <outlet property="aView" destination="rkJ-v9-veR" id="5Cm-g6-0qf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

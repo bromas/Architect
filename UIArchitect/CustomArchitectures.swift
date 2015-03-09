@@ -13,7 +13,9 @@ extension Architect {
   
   public class func custom<T>(customView: T, inView view: UIView, construct: ((view: T) -> Void)) -> T {
     let possibleViewSubclass = customView as? UIView
-    possibleViewSubclass?.preppedForAutoLayout(inView: view)
+    if let viewSubclass = possibleViewSubclass {
+      viewSubclass.preppedForAutoLayout(inView: view)
+    }
     construct(view: customView)
     return customView
   }

@@ -14,14 +14,14 @@ extension Grunt {
   public class func inset (view: UIView, with options: [BlueprintGuide: Float]) -> [NSLayoutConstraint] {
     Blueprint.assertSuperview(forView: view)
     let constraints = Blueprint.inset(view, with: options)
-    view.addConstraints(constraints)
+    view.superview!.addConstraints(constraints)
     return constraints
   }
   
   public class func inset (view: UIView, withExtendedOptions options: [BlueprintGuide: (relation: BlueprintRelation, magnitude: Float, priority: BlueprintPriority)]) -> [NSLayoutConstraint] {
     Blueprint.assertSuperview(forView: view)
     let constraints = Blueprint.inset(view, withExtendedOptions: options)
-    view.addConstraints(constraints)
+    view.superview!.addConstraints(constraints)
     return constraints
   }
 }
