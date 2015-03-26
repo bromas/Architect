@@ -15,7 +15,7 @@ public class ArchitectLabel : UILabel {
         super.init(coder: aDecoder!)
     }
     
-    override init () {
+    init () {
         super.init(frame: CGRectZero)
         self.numberOfLines = 0
     }

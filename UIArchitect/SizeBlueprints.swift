@@ -40,6 +40,6 @@ extension Blueprint {
             }
         }
         
-        return constraints as [NSLayoutConstraint]
+        return constraints as! [NSLayoutConstraint]
     }
 }

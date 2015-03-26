@@ -32,10 +32,10 @@ public class XibBasedView : UIView {
         self.commonInitialization()
     }
     
-    override public init() {
-        super.init()
+    public init() {
+        super.init(frame: CGRectZero)
     }
-    
+  
     func commonInitialization () -> Void {
         
         self.backgroundColor = UIColor.clearColor()

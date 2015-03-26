@@ -32,7 +32,7 @@ extension Blueprint {
         constraints = constraints + NSLayoutConstraint.constraintsWithVisualFormat("V:|-(topInset)-[view]-(bottomInset)-|", options:options, metrics: metrics, views: views)
         constraints = constraints + NSLayoutConstraint.constraintsWithVisualFormat("H:|-(leftInset)-[view]-(rightInset)-|", options:options, metrics: metrics, views: views)
         
-        return constraints as Blueprints
+        return constraints as! Blueprints
     }
     
     public class func inset (view: UIView, withExtendedOptions options: [BlueprintGuide: (relation: BlueprintRelation, magnitude: Float, priority: BlueprintPriority)]) -> Blueprints {
@@ -41,7 +41,7 @@ extension Blueprint {
         var constraints = [AnyObject]()
         
         for (direction, option) in options {
-            var formatString: NSString = ""
+            var formatString: String = ""
             var insetString = "\(option.relation.string())\(option.magnitude)@\(option.priority.float())"
             
             switch direction {
@@ -61,7 +61,7 @@ extension Blueprint {
             constraints = constraints + NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(0), metrics: metrics, views: ["forView":view])
         }
         
-        return constraints as Blueprints
+        return constraints as! Blueprints
     }
     
     public class func inset (view: UIView, with options: [BlueprintGuide: Float]) -> Blueprints {
@@ -70,7 +70,7 @@ extension Blueprint {
         var constraints = [AnyObject]()
         
         for (option, magnitude) in options {
-            var formatString: NSString = ""
+            var formatString: String = ""
             
             switch option {
             case .Top:
@@ -89,7 +89,7 @@ extension Blueprint {
             constraints = constraints + NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(0), metrics: metrics, views: ["forView":view])
         }
         
-        return constraints as Blueprints
+        return constraints as! Blueprints
     }
     
     public class func inset (#origin: (x: Float, y: Float), of view: UIView) -> Blueprints {
@@ -104,6 +104,6 @@ extension Blueprint {
         constraints = constraints + NSLayoutConstraint.constraintsWithVisualFormat("V:|-(y)-[view]", options:options, metrics: metrics, views: views)
         constraints = constraints + NSLayoutConstraint.constraintsWithVisualFormat("H:|-(x)-[view]", options:options, metrics: metrics, views: views)
         
-        return constraints as Blueprints
+        return constraints as! Blueprints
     }
 }

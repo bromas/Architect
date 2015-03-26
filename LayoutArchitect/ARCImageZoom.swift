@@ -39,8 +39,8 @@ public class ARCImageZoom : UIScrollView, UIScrollViewDelegate {
         self.sharedInitialization()
     }
     
-    public override init() {
-        super.init()
+    public init() {
+        super.init(frame: CGRectZero)
     }
     
     private func sharedInitialization () -> Void {
