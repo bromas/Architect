@@ -13,21 +13,21 @@ import UIKit
 
 extension Constrain {
   
-  public class func center(view: UIView, from: UIView, with options: [BlueprintCoordinate: CGFloat]) -> CenterResult {
-    return center(view, from: from, with: options)
+  public class func anchor(view: UIView, from: UIView, with options: [BlueprintCoordinate: CGFloat]) -> CenterResult {
+    return anchor(view, from: from, with: options)
   }
   
-  public class func center(view: UIView, with options: [BlueprintCoordinate: CGFloat]) -> CenterResult {
-    return center(view, with: options)
+  public class func anchor(view: UIView, with options: [BlueprintCoordinate: CGFloat]) -> CenterResult {
+    return anchor(view, with: options)
   }
   
 }
 
-public func center(view: UIView, with attributes: [BlueprintCoordinate: CGFloat]) -> CenterResult {
-  return center(view, from: view.superview!, with: attributes)
+public func anchor(view: UIView, with attributes: [BlueprintCoordinate: CGFloat]) -> CenterResult {
+  return anchor(view, from: view.superview!, with: attributes)
 }
 
-public func center(view: UIView, from fromView: UIView, with attributes: [BlueprintCoordinate: CGFloat]) -> CenterResult {
+public func anchor(view: UIView, from fromView: UIView, with attributes: [BlueprintCoordinate: CGFloat]) -> CenterResult {
   
   var constraints = CenterResult()
   

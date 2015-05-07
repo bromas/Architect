@@ -76,8 +76,8 @@ public func equate(view: UIView, to toView: UIView, with options: [BlueprintMeas
 
 public func equate(view: UIView, to toView: UIView, withExtendedOptions options: [BlueprintMeasure: ExtendedEquateOptions]) -> EquateResult {
   
+  let superview = assertCommonSuperview(view, and: toView)
   var constraints = EquateResult()
-  let views = ["view": view]
   let finalToView: UIView? = view == toView ? .None : toView
   
   for (attribute: BlueprintMeasure, with: ExtendedEquateOptions) in options {
@@ -88,12 +88,12 @@ public func equate(view: UIView, to toView: UIView, withExtendedOptions options:
       var constraint = NSLayoutConstraint(item: view, attribute: .Width, relatedBy: relation, toItem: finalToView, attribute: .Width, multiplier: with.multiplier, constant: with.magnitude)
       constraint.priority = priority
       constraints[.Width] = constraint
-      view.addConstraint(constraints[.Width]!)
+      superview.addConstraint(constraints[.Width]!)
     case .Height:
       var constraint = NSLayoutConstraint(item: view, attribute: .Height, relatedBy: relation, toItem: finalToView, attribute: .Height, multiplier: with.multiplier, constant: with.magnitude)
       constraint.priority = priority
       constraints[.Height] = constraint
-      view.addConstraint(constraints[.Height]!)
+      superview.addConstraint(constraints[.Height]!)
     }
   }
   
