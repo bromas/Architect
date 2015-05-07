@@ -10,31 +10,32 @@ import Foundation
 import UIKit
 
 public class XibBasedView : UIView {
-    
-    public var nibView : UIView?
-    
-    public override var backgroundColor : UIColor? {
-        get {
-            return nibView?.backgroundColor
-        }
-        set {
-            nibView?.backgroundColor = newValue
-        }
+  
+  public var nibView : UIView?
+  
+  public override var backgroundColor : UIColor? {
+    get {
+      return nibView?.backgroundColor
     }
-    
-    required public init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.commonInitialization()
+    set {
+      nibView?.backgroundColor = newValue
     }
-    
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        self.commonInitialization()
-    }
-    
-    public init() {
-        super.init(frame: CGRectZero)
-    }
+  }
+  
+  required public init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    self.commonInitialization()
+  }
+  
+  override public init(frame: CGRect) {
+    super.init(frame: frame)
+    self.commonInitialization()
+  }
+  
+  public init() {
+    super.init(frame: CGRectZero)
+    self.commonInitialization()
+  }
   
   func commonInitialization () -> Void {
     
@@ -44,7 +45,7 @@ public class XibBasedView : UIView {
     var classString = classArray.last
     
     if let className = classString {
-      let views = NSBundle.mainBundle().loadNibNamed(classString, owner: self, options: nil)
+      let views = NSBundle.mainBundle().loadNibNamed(className, owner: self, options: nil)
       assert(views.count > 0, "Could not find a nib to load")
       
       let possibleView = views.first as? UIView

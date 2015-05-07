@@ -57,10 +57,10 @@ class ViewController: UIViewController {
         pin(left: $0, toRight: orangeView, magnitude: 0)
         pin(top: $0, toBottom: yellowView, magnitude: 0)
         inset($0, with: [.Right: 0, .Bottom: 0])
-        let firstLastView = Architect.custom(FirstLastNameXibView(), inView: $0) {
-          center($0, with: [.X: 0, .Y: 0])
-          $0.configureWith(firstName: "John", lastName: "Doe")
-        }
+//        let firstLastView = Architect.custom(FirstLastNameXibView(), inView: $0) {
+//          center($0, with: [.X: 0, .Y: 0])
+//          $0.configureWith(firstName: "John", lastName: "Doe")
+//        }
       }
     }
   }
@@ -84,15 +84,6 @@ class ViewController: UIViewController {
     }
     
     Blueprint.verticalLayout([first, second, third], inView: textContainer, spaced: 8.0, with: [.Top: 10, .Right: 10, .Bottom: 10, .Left: 10])
-  }
-  
-  
-  func addCenteredFirstLastNameView(inView: UIView) -> FirstLastNameXibView {
-    let firstLastView = Architect.custom(FirstLastNameXibView(), inView: inView) {
-      center($0, with: [.X: 0, .Y: 0])
-      $0.configureWith(firstName: "John", lastName: "Doe")
-    }
-    return firstLastView
   }
   
   
