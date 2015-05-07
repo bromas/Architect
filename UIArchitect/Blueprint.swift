@@ -45,8 +45,7 @@ public func commonSuperview(first: UIView, second: UIView) -> UIView?
   var firstTree: UIView? = first
   var secondTree: UIView? = second
   
-  do {
-    
+  while (firstTree != .None || secondTree != .None) {
     switch firstTree {
     case let .Some(view):
       if views.contains(view) {
@@ -68,8 +67,7 @@ public func commonSuperview(first: UIView, second: UIView) -> UIView?
     case .None:
       assert(true, "")
     }
-    
-  } while (firstTree != .None || secondTree != .None)
+  }
   
   return .None
 }
