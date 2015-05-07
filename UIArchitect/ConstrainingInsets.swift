@@ -52,7 +52,7 @@ public func inset(view: UIView, withExtendedOptions options: [BlueprintGuide: (r
     }
     
     let metrics = ["insetSize": option.magnitude]
-    constraints[direction] = (NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(0), metrics: metrics, views: ["forView":view])[0] as! NSLayoutConstraint)
+    constraints[direction] = (NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(0), metrics: metrics, views: ["forView":view])[0] as? NSLayoutConstraint)
     superview.addConstraint(constraints[direction]!)
   }
   

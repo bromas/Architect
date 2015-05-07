@@ -11,17 +11,13 @@ import UIKit
 
 public class Blueprint {
   
-  public class func printDocumentation () -> Void {
-    
-  }
-  
 }
 
 public func assertSuperview(#forView: UIView) -> UIView {
   let superview = forView.superview
   switch superview {
-  case let .Some(view):
-    return view
+  case .Some(let found):
+    return found
   case .None:
     assert(false, "\(forView) did not have a required superview.")
   }
@@ -31,11 +27,12 @@ public func assertSuperview(#forView: UIView) -> UIView {
 public func assertCommonSuperview(forView: UIView, and andView: UIView) -> UIView {
   let superview = commonSuperview(forView, andView)
   switch superview {
-  case let .Some(view):
-    return view
+  case .Some(let found):
+    return found
   case .None:
     assert(false, "\(forView) and \(andView) do not share a common superview.")
   }
+  return UIView()
 }
 
 public func commonSuperview(first: UIView, second: UIView) -> UIView?
