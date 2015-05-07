@@ -11,17 +11,11 @@ import Foundation
 extension Architect {
     
     public class func imageView (inView view: UIView, construct: ((label: UIImageView) -> Void)) -> UIImageView {
-        return self.custom(UIImageView(), inView: view, construct: construct) as UIImageView
+        return self.custom(UIImageView(), inView: view, construct: construct)
     }
     
     public class func imageView (inView view: UIView) -> UIImageView {
-        return self.custom(UIImageView(), inView: view) as UIImageView
+        return self.custom(UIImageView(), inView: view)
     }
-    
-    public class func imageView (inView superview: UIView, withInsets insets: UIEdgeInsets) -> UIImageView {
-        var imageView = UIImageView.autoLayoutView(inView: superview)
-        Grunt.construct(Blueprint.inset(edges: insets, of: imageView), inView: superview)
-        return imageView as! UIImageView
-    }
-    
+  
 }

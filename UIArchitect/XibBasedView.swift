@@ -36,25 +36,24 @@ public class XibBasedView : UIView {
         super.init(frame: CGRectZero)
     }
   
-    func commonInitialization () -> Void {
-        
-        self.backgroundColor = UIColor.clearColor()
-        var stringToMessWith = NSStringFromClass(self.classForCoder)
-        var classArray = stringToMessWith.componentsSeparatedByString(".")
-        var classString = classArray.last
-        
-        if let className = classString {
-            let views = NSBundle.mainBundle().loadNibNamed(classString, owner: self, options: nil)
-            assert(views.count > 0, "Could not find a nib to load")
-            
-            let possibleView = views.first as? UIView
-            if let view = possibleView {
-                self.nibView = view
-                view.preppedForAutoLayout(inView: self)
-                Grunt.construct(Blueprint.inset(edges: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), of: view), inView: self)
-            }
-        }
-        
-    }
+  func commonInitialization () -> Void {
     
+    self.backgroundColor = .clearColor()
+    var stringToMessWith = NSStringFromClass(self.classForCoder)
+    var classArray = stringToMessWith.componentsSeparatedByString(".")
+    var classString = classArray.last
+    
+    if let className = classString {
+      let views = NSBundle.mainBundle().loadNibNamed(classString, owner: self, options: nil)
+      assert(views.count > 0, "Could not find a nib to load")
+      
+      let possibleView = views.first as? UIView
+      if let view = possibleView {
+        self.nibView = view
+        view.preppedForAutoLayout(inView: self)
+        inset(view, with: [.Top: 0, .Right: 0, .Bottom: 0, .Left: 0])
+      }
+    }
+  }
+  
 }

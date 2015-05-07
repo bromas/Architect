@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkJ-v9-veR">
-                                <rect key="frame" x="15" y="90" width="570" height="495"/>
+                                <rect key="frame" x="15" y="100" width="570" height="485"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHB-QN-3iI" customClass="SomeXibView" customModule="LayoutArchitect" customModuleProvider="target">
-                                <rect key="frame" x="220.5" y="28" width="160" height="66"/>
+                                <rect key="frame" x="221" y="28" width="160" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="g3u-An-JyW"/>
@@ -35,7 +35,7 @@
                             <constraint firstItem="vHB-QN-3iI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Iwr-uF-6gH"/>
                             <constraint firstItem="rkJ-v9-veR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="VAT-Mn-Iw3"/>
                             <constraint firstAttribute="centerX" secondItem="vHB-QN-3iI" secondAttribute="centerX" constant="-0.5" id="Vn3-Dy-vPV"/>
-                            <constraint firstItem="rkJ-v9-veR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="70" id="pTr-8f-MeW"/>
+                            <constraint firstItem="rkJ-v9-veR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="pTr-8f-MeW"/>
                             <constraint firstAttribute="trailing" secondItem="rkJ-v9-veR" secondAttribute="trailing" constant="15" id="uqo-Z4-NxY"/>
                         </constraints>
                     </view>

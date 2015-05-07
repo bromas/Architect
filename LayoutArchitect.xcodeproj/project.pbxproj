@@ -32,21 +32,18 @@
 		D32BAFCC1A33FED500894407 /* LabelArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3F21973832C007A3990 /* LabelArchitectures.swift */; };
 		D32BAFCD1A33FED500894407 /* TextViewArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3F81973835D007A3990 /* TextViewArchitectures.swift */; };
 		D32BAFCE1A33FED500894407 /* ButtonArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3FB19738BDE007A3990 /* ButtonArchitectures.swift */; };
-		D32BAFCF1A33FED500894407 /* SizeArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3F019735BF1007A3990 /* SizeArchitectures.swift */; };
-		D32BAFD01A33FED500894407 /* CenterArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3FF197391A0007A3990 /* CenterArchitectures.swift */; };
-		D32BAFD11A33FED500894407 /* InsetArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4011973955D007A3990 /* InsetArchitectures.swift */; };
-		D32BAFD21A33FED500894407 /* PinArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B2FDAA198D1D52007B2466 /* PinArchitectures.swift */; };
+		D32BAFCF1A33FED500894407 /* ConstrainingSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3F019735BF1007A3990 /* ConstrainingSize.swift */; };
+		D32BAFD01A33FED500894407 /* ConstrainingCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3FF197391A0007A3990 /* ConstrainingCenter.swift */; };
+		D32BAFD11A33FED500894407 /* ConstrainingInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */; };
+		D32BAFD21A33FED500894407 /* ConstrainingPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B2FDAA198D1D52007B2466 /* ConstrainingPins.swift */; };
 		D32BAFD31A33FEDC00894407 /* XibBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FF7B52198D400C0069A08C /* XibBasedView.swift */; };
 		D32BAFD41A33FEDC00894407 /* UIArchitect.h in Headers */ = {isa = PBXBuildFile; fileRef = D3D493B6196F92F200432A50 /* UIArchitect.h */; };
 		D32BAFD51A33FEDC00894407 /* UIView_Architect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3EB19718617007A3990 /* UIView_Architect.swift */; };
 		D32BAFD61A33FEDC00894407 /* Architect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D493D6196F933000432A50 /* Architect.swift */; };
-		D32BAFD71A33FEDC00894407 /* Grunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4081973B00C007A3990 /* Grunt.swift */; };
+		D32BAFD71A33FEDC00894407 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4081973B00C007A3990 /* Constrain.swift */; };
 		D32BAFD81A33FEDC00894407 /* Blueprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3D9196FB155007A3990 /* Blueprint.swift */; };
 		D32BAFD91A33FEDC00894407 /* BlueprintOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B12361197B4B530044AB40 /* BlueprintOptions.swift */; };
-		D32BAFDA1A33FEE000894407 /* SizeBlueprints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3E71970D5C6007A3990 /* SizeBlueprints.swift */; };
-		D32BAFDB1A33FEE000894407 /* CenterBlueprints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3E51970CFF3007A3990 /* CenterBlueprints.swift */; };
-		D32BAFDC1A33FEE000894407 /* InsetBlueprints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3DF1970BA24007A3990 /* InsetBlueprints.swift */; };
-		D32BAFDD1A33FEE000894407 /* PinBlueprints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3E91970ED3E007A3990 /* PinBlueprints.swift */; };
+		D38141421AFB0D5700022F35 /* TextFieldArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */; };
 		D39DF1C819E321AC00839249 /* SomeXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39DF1C719E321AC00839249 /* SomeXibView.xib */; };
 		D39DF1CA19E321BA00839249 /* SomeXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DF1C919E321BA00839249 /* SomeXibView.swift */; };
 		D39DF1CE19E42DA700839249 /* ARCImageZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DF1CD19E42DA700839249 /* ARCImageZoom.swift */; };
@@ -117,32 +114,29 @@
 		D32BAFB31A33FEC500894407 /* ArchitectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32BAFBB1A33FEC500894407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D32BAFBC1A33FEC500894407 /* ArchitectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectTests.swift; sourceTree = "<group>"; };
+		D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldArchitectures.swift; sourceTree = "<group>"; };
 		D39DF1C719E321AC00839249 /* SomeXibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SomeXibView.xib; sourceTree = "<group>"; };
 		D39DF1C919E321BA00839249 /* SomeXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeXibView.swift; sourceTree = "<group>"; };
 		D39DF1CD19E42DA700839249 /* ARCImageZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCImageZoom.swift; sourceTree = "<group>"; };
 		D39DF1CF19E49A0F00839249 /* FirstLastNameXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLastNameXibView.swift; sourceTree = "<group>"; };
 		D39DF1D119E49ADB00839249 /* FirstLastNameXibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstLastNameXibView.xib; sourceTree = "<group>"; };
 		D3B12361197B4B530044AB40 /* BlueprintOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueprintOptions.swift; sourceTree = "<group>"; };
-		D3B2FDAA198D1D52007B2466 /* PinArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinArchitectures.swift; sourceTree = "<group>"; };
+		D3B2FDAA198D1D52007B2466 /* ConstrainingPins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingPins.swift; sourceTree = "<group>"; };
 		D3C6E3D9196FB155007A3990 /* Blueprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blueprint.swift; sourceTree = "<group>"; };
-		D3C6E3DF1970BA24007A3990 /* InsetBlueprints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetBlueprints.swift; sourceTree = "<group>"; };
-		D3C6E3E51970CFF3007A3990 /* CenterBlueprints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterBlueprints.swift; sourceTree = "<group>"; };
-		D3C6E3E71970D5C6007A3990 /* SizeBlueprints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeBlueprints.swift; sourceTree = "<group>"; };
-		D3C6E3E91970ED3E007A3990 /* PinBlueprints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinBlueprints.swift; sourceTree = "<group>"; };
 		D3C6E3EB19718617007A3990 /* UIView_Architect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Architect.swift; sourceTree = "<group>"; };
 		D3C6E3EE19718E81007A3990 /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
-		D3C6E3F019735BF1007A3990 /* SizeArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeArchitectures.swift; sourceTree = "<group>"; };
+		D3C6E3F019735BF1007A3990 /* ConstrainingSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingSize.swift; sourceTree = "<group>"; };
 		D3C6E3F21973832C007A3990 /* LabelArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelArchitectures.swift; sourceTree = "<group>"; };
 		D3C6E3F419738346007A3990 /* ViewArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewArchitectures.swift; sourceTree = "<group>"; };
 		D3C6E3F619738353007A3990 /* ImageViewArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewArchitectures.swift; sourceTree = "<group>"; };
 		D3C6E3F81973835D007A3990 /* TextViewArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewArchitectures.swift; sourceTree = "<group>"; };
 		D3C6E3FB19738BDE007A3990 /* ButtonArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonArchitectures.swift; sourceTree = "<group>"; };
 		D3C6E3FD19739114007A3990 /* CustomArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomArchitectures.swift; sourceTree = "<group>"; };
-		D3C6E3FF197391A0007A3990 /* CenterArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterArchitectures.swift; sourceTree = "<group>"; };
-		D3C6E4011973955D007A3990 /* InsetArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetArchitectures.swift; sourceTree = "<group>"; };
+		D3C6E3FF197391A0007A3990 /* ConstrainingCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingCenter.swift; sourceTree = "<group>"; };
+		D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingInsets.swift; sourceTree = "<group>"; };
 		D3C6E4041973A19C007A3990 /* SampleCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCode.swift; sourceTree = "<group>"; };
 		D3C6E4061973A96C007A3990 /* Sample2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample2.swift; sourceTree = "<group>"; };
-		D3C6E4081973B00C007A3990 /* Grunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grunt.swift; sourceTree = "<group>"; };
+		D3C6E4081973B00C007A3990 /* Constrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrain.swift; sourceTree = "<group>"; };
 		D3D4938B196F92BC00432A50 /* LayoutArchitect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutArchitect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D4938F196F92BC00432A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3D49390196F92BC00432A50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -239,26 +233,34 @@
 			name = CustomViews;
 			sourceTree = "<group>";
 		};
-		D3C6E3E11970BDA0007A3990 /* Architectures */ = {
+		D381413F1AFA9F6100022F35 /* Architecting */ = {
 			isa = PBXGroup;
 			children = (
-				D3E581AF1AAD5B9E00D5A933 /* Controllers */,
-				D3C6E3FA19738365007A3990 /* UIViewSubclasses */,
-				D3C6E3F019735BF1007A3990 /* SizeArchitectures.swift */,
-				D3C6E3FF197391A0007A3990 /* CenterArchitectures.swift */,
-				D3C6E4011973955D007A3990 /* InsetArchitectures.swift */,
-				D3B2FDAA198D1D52007B2466 /* PinArchitectures.swift */,
+				D3C6E3FD19739114007A3990 /* CustomArchitectures.swift */,
+				D3C6E3F419738346007A3990 /* ViewArchitectures.swift */,
+				D3C6E3F619738353007A3990 /* ImageViewArchitectures.swift */,
+				D3C6E3F21973832C007A3990 /* LabelArchitectures.swift */,
+				D3C6E3F81973835D007A3990 /* TextViewArchitectures.swift */,
+				D3C6E3FB19738BDE007A3990 /* ButtonArchitectures.swift */,
+				D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */,
 			);
-			name = Architectures;
+			name = Architecting;
+			sourceTree = "<group>";
+		};
+		D38141401AFA9F7A00022F35 /* Constraining */ = {
+			isa = PBXGroup;
+			children = (
+				D3C6E3F019735BF1007A3990 /* ConstrainingSize.swift */,
+				D3C6E3FF197391A0007A3990 /* ConstrainingCenter.swift */,
+				D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */,
+				D3B2FDAA198D1D52007B2466 /* ConstrainingPins.swift */,
+			);
+			name = Constraining;
 			sourceTree = "<group>";
 		};
 		D3C6E3E21970BDC0007A3990 /* Blueprints */ = {
 			isa = PBXGroup;
 			children = (
-				D3C6E3E71970D5C6007A3990 /* SizeBlueprints.swift */,
-				D3C6E3E51970CFF3007A3990 /* CenterBlueprints.swift */,
-				D3C6E3DF1970BA24007A3990 /* InsetBlueprints.swift */,
-				D3C6E3E91970ED3E007A3990 /* PinBlueprints.swift */,
 				D3E581B21AADF9DC00D5A933 /* DirectionalLayouts.swift */,
 			);
 			name = Blueprints;
@@ -275,19 +277,6 @@
 				D39DF1D119E49ADB00839249 /* FirstLastNameXibView.xib */,
 			);
 			name = CustomViews;
-			sourceTree = "<group>";
-		};
-		D3C6E3FA19738365007A3990 /* UIViewSubclasses */ = {
-			isa = PBXGroup;
-			children = (
-				D3C6E3FD19739114007A3990 /* CustomArchitectures.swift */,
-				D3C6E3F419738346007A3990 /* ViewArchitectures.swift */,
-				D3C6E3F619738353007A3990 /* ImageViewArchitectures.swift */,
-				D3C6E3F21973832C007A3990 /* LabelArchitectures.swift */,
-				D3C6E3F81973835D007A3990 /* TextViewArchitectures.swift */,
-				D3C6E3FB19738BDE007A3990 /* ButtonArchitectures.swift */,
-			);
-			name = UIViewSubclasses;
 			sourceTree = "<group>";
 		};
 		D3C6E4031973A183007A3990 /* Sample Code */ = {
@@ -370,10 +359,12 @@
 				D3D493B6196F92F200432A50 /* UIArchitect.h */,
 				D3C6E3EB19718617007A3990 /* UIView_Architect.swift */,
 				D3D493D6196F933000432A50 /* Architect.swift */,
-				D3C6E4081973B00C007A3990 /* Grunt.swift */,
+				D3C6E4081973B00C007A3990 /* Constrain.swift */,
 				D3C6E3D9196FB155007A3990 /* Blueprint.swift */,
 				D3B12361197B4B530044AB40 /* BlueprintOptions.swift */,
-				D3C6E3E11970BDA0007A3990 /* Architectures */,
+				D38141401AFA9F7A00022F35 /* Constraining */,
+				D381413F1AFA9F6100022F35 /* Architecting */,
+				D3E581AF1AAD5B9E00D5A933 /* Controllers */,
 				D3C6E3E21970BDC0007A3990 /* Blueprints */,
 				D3D493B4196F92F200432A50 /* Supporting Files */,
 			);
@@ -608,26 +599,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D32BAFD71A33FEDC00894407 /* Grunt.swift in Sources */,
-				D32BAFDD1A33FEE000894407 /* PinBlueprints.swift in Sources */,
+				D32BAFD71A33FEDC00894407 /* Constrain.swift in Sources */,
 				D32BAFD31A33FEDC00894407 /* XibBasedView.swift in Sources */,
 				D32BAFD91A33FEDC00894407 /* BlueprintOptions.swift in Sources */,
-				D32BAFD11A33FED500894407 /* InsetArchitectures.swift in Sources */,
+				D32BAFD11A33FED500894407 /* ConstrainingInsets.swift in Sources */,
 				D32BAFC91A33FED500894407 /* CustomArchitectures.swift in Sources */,
+				D38141421AFB0D5700022F35 /* TextFieldArchitectures.swift in Sources */,
 				D32BAFCC1A33FED500894407 /* LabelArchitectures.swift in Sources */,
-				D32BAFDB1A33FEE000894407 /* CenterBlueprints.swift in Sources */,
-				D32BAFCF1A33FED500894407 /* SizeArchitectures.swift in Sources */,
-				D32BAFD01A33FED500894407 /* CenterArchitectures.swift in Sources */,
+				D32BAFCF1A33FED500894407 /* ConstrainingSize.swift in Sources */,
+				D32BAFD01A33FED500894407 /* ConstrainingCenter.swift in Sources */,
 				D32BAFD81A33FEDC00894407 /* Blueprint.swift in Sources */,
 				D32BAFCA1A33FED500894407 /* ViewArchitectures.swift in Sources */,
 				D3E581B31AADF9DC00D5A933 /* DirectionalLayouts.swift in Sources */,
 				D32BAFCD1A33FED500894407 /* TextViewArchitectures.swift in Sources */,
-				D32BAFDA1A33FEE000894407 /* SizeBlueprints.swift in Sources */,
 				D32BAFD51A33FEDC00894407 /* UIView_Architect.swift in Sources */,
 				D32BAFCE1A33FED500894407 /* ButtonArchitectures.swift in Sources */,
-				D32BAFD21A33FED500894407 /* PinArchitectures.swift in Sources */,
+				D32BAFD21A33FED500894407 /* ConstrainingPins.swift in Sources */,
 				D32BAFD61A33FEDC00894407 /* Architect.swift in Sources */,
-				D32BAFDC1A33FEE000894407 /* InsetBlueprints.swift in Sources */,
 				D3E581B11AAD5BC300D5A933 /* EmbedArchitectures.swift in Sources */,
 				D32BAFCB1A33FED500894407 /* ImageViewArchitectures.swift in Sources */,
 			);

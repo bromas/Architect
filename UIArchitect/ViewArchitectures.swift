@@ -11,18 +11,12 @@ import UIKit
 
 extension Architect {
     
-    public class func view (inView view: UIView, construct: Construction) -> UIView {
+    public class func view (inView view: UIView, construct: (forView: UIView) -> Void) -> UIView {
         return self.custom(UIView(), inView: view, construct: construct)
     }
     
     public class func view (inView view: UIView) -> UIView {
         return self.custom(UIView(), inView: view)
     }
-    
-    public class func view (inView superview: UIView, withInsets insets: UIEdgeInsets) -> UIView {
-        var view = UIView.autoLayoutView(inView: superview)
-        Grunt.construct(Blueprint.inset(edges: insets, of: view), inView: superview)
-        return view
-    }
-    
+  
 }

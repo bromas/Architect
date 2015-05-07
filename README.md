@@ -1,7 +1,7 @@
-###Architect
+### Architect
 Architect is a framework for simplifying view and layout generation in swift.
 
-####Installation
+#### Installation
 Using [Carthage](https://github.com/Carthage/Carthage) add
 ```shell
 github "bromas/Architect"

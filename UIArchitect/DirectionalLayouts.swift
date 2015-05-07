@@ -8,43 +8,17 @@
 
 import Foundation
 
-extension Grunt {
-  public class func verticallyLayout(views: [UIView], inView: UIView, with: [BlueprintGuide: Float]) -> [UIView] {
-    assert(with.indexForKey(.Top) != .None
-      && with.indexForKey(.Right) != .None
-      && with.indexForKey(.Bottom) != .None
-      && with.indexForKey(.Left) != .None, "You must provide all edges for the insets of a vertical layout.")
-    
-    let count = views.count
-    var lastManagedView: UIView?
-    for (index, view) in enumerate(views) {
-      switch count {
-      case 1:
-        Constrain.inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
-      case 2:
-        Constrain.inset(views[0], with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
-        Constrain.pin(top: views[1], toBottom: views[0], withMagnitude: 0.0)
-        Constrain.inset(views[1], with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
-      default:
-        switch index {
-        case 0:
-          Constrain.inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
-        case 1...(count-2):
-          Constrain.pin(top: view, toBottom: lastManagedView!, withMagnitude: 0.0)
-          Constrain.inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!])
-        case count-1:
-          Constrain.pin(top: view, toBottom: lastManagedView!, withMagnitude: 0.0)
-          Constrain.inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
-        default:
-          Constrain.inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
-        }
-      }
-      lastManagedView = view
-    }
-    return views
+extension Blueprint {
+  
+  public class func verticallyLayout(views: [UIView], inView: UIView) -> [UIView] {
+    return verticalLayout(views, inView: inView, spaced: 0.0, with: [.Top: 0, .Right: 0, .Bottom: 0, .Left: 0])
   }
   
-  public class func verticallyLayout(views: [UIView], inView: UIView, spaced: Float, with: [BlueprintGuide: Float]) -> [UIView] {
+  public class func verticallyLayout(views: [UIView], inView: UIView, with: [BlueprintGuide: CGFloat]) -> [UIView] {
+    return verticalLayout(views, inView: inView, spaced: 0.0, with: with)
+  }
+  
+  public class func verticalLayout(views: [UIView], inView: UIView, spaced: CGFloat, with: [BlueprintGuide: CGFloat]) -> [UIView] {
     assert(with.indexForKey(.Top) != .None
       && with.indexForKey(.Right) != .None
       && with.indexForKey(.Bottom) != .None
@@ -53,26 +27,26 @@ extension Grunt {
     let count = views.count
     var lastManagedView: UIView?
     for (index, view) in enumerate(views) {
-      Constrain.center(view, with: [.X: 0])
+      center(view, with: [.X: 0])
       switch count {
       case 1:
-        Constrain.inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
+        inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
       case 2:
-        Constrain.inset(views[0], with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
-        Constrain.pin(top: views[1], toBottom: views[0], withMagnitude: spaced)
-        Constrain.inset(views[1], with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
+        inset(views[0], with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
+        pin(top: views[1], toBottom: views[0], magnitude: CGFloat(spaced))
+        inset(views[1], with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
       default:
         switch index {
         case 0:
-          Constrain.inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
+          inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
         case 1...(count-2):
-          Constrain.pin(top: view, toBottom: lastManagedView!, withMagnitude: spaced)
-          Constrain.inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!])
+          pin(top: view, toBottom: lastManagedView!, magnitude: CGFloat(spaced))
+          inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!])
         case count-1:
-          Constrain.pin(top: view, toBottom: lastManagedView!, withMagnitude: spaced)
-          Constrain.inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
+          pin((view, .Top), to: (lastManagedView!, .Bottom), magnitude: CGFloat(spaced))
+          inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
         default:
-          Constrain.inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
+          inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
         }
       }
       lastManagedView = view

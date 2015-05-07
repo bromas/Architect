@@ -21,15 +21,16 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.aView.backgroundColor = .darkGrayColor()
     addScrollView(self.aView)
     let constraint = embedSomething()
-    
+
     UIView.performWithoutAnimation() {
       self.view.layoutIfNeeded()
     }
     
     UIView.animateWithDuration(2.0) {
-      constraint.constant = 80
+      constraint.constant = -100
       self.view.layoutIfNeeded()
     }
   }
@@ -37,44 +38,37 @@ class ViewController: UIViewController {
   func addScrollView (toView: UIView) -> Void {
     
     self.scroll = Architect.custom(UIScrollView(), inView: toView) {
-      Grunt.inset($0, with: [.Top: 0, .Left: 0, .Bottom: 0, .Right: 0])
+      inset($0, with: [.Top: 0, .Left: 0, .Bottom: 100, .Right: 0])
       
       let yellowView = Architect.custom(ColorView(color: UIColor.yellowColor()), inView: $0) {
-        Constrain.inset($0, with: [.Left: 0, .Top: 0, .Right: 0])
-        Grunt.size($0, with: [.Height: 50, .Width: 600])
+        inset($0, with: [.Left: 0, .Top: 0, .Right: 0])
+        size($0, with: [.Height: 50, .Width: 600])
       }
       
       let orangeView = Architect.custom(ColorView(color: UIColor.orangeColor()), inView: $0) {
-        Grunt.pin(top: $0, toBottom: yellowView, withMagnitude: 0)
-        Grunt.inset($0, with: [.Left: 0, .Bottom: 0])
-        Grunt.size($0, with: [.Width: 200, .Height: 600])
+        pin(top: $0, toBottom: yellowView, magnitude: 0.0)
+        inset($0, with: [.Left: 0, .Bottom: 0])
+        size($0, with: [.Width: 200, .Height: 600])
         self.addCenteredVerticalTextLabels($0, withWidth: 180)
       }
-      
+
       Architect.custom(ColorView(color: UIColor.greenColor()), inView: $0) {
-        Grunt.pin(left: $0, toRight: orangeView, withMagnitude: 0)
-        Grunt.pin(top: $0, toBottom: yellowView, withMagnitude: 0)
-        Grunt.inset($0, with: [.Right: 0, .Bottom: 0])
+        pin(left: $0, toRight: orangeView, magnitude: 0)
+        pin(top: $0, toBottom: yellowView, magnitude: 0)
+        inset($0, with: [.Right: 0, .Bottom: 0])
         let firstLastView = Architect.custom(FirstLastNameXibView(), inView: $0) {
-          Grunt.center($0, with: [.X: 0, .Y: 0])
+          center($0, with: [.X: 0, .Y: 0])
           $0.configureWith(firstName: "John", lastName: "Doe")
         }
       }
     }
   }
   
-//  func addZoomImageView (toView: UIView?) -> Void {
-//    Architect.custom(ARCImageZoom(), inView: toView!) {
-//      Grunt.inset($0, with: [.Top : 0, .Right : 0, .Bottom : 0, .Left: 0])
-//      $0.image = UIImage(named: "eYCHy")
-//    }
-//  }
-  
-  func addCenteredVerticalTextLabels(toView: UIView, withWidth: Float) {
+  func addCenteredVerticalTextLabels(toView: UIView, withWidth: CGFloat) {
     let textContainer = Architect.view(inView: toView) {
       $0.backgroundColor = UIColor.purpleColor()
-      Constrain.center($0, with: [.X: 0, .Y: 0])
-      Constrain.size($0, with: [.Width: withWidth])
+      center($0, with: [.X: 0, .Y: 0])
+      size($0, with: [.Width: withWidth])
     }
     
     let first = Architect.label(inView: textContainer) {
@@ -87,12 +81,12 @@ class ViewController: UIViewController {
       $0.text = "How do I look?"
     }
     
-    Constrain.verticallyLayout([first, second, third], inView: textContainer, spaced: 8.0, with: [.Top: 10, .Right: 10, .Bottom: 10, .Left: 10])
+    Blueprint.verticalLayout([first, second, third], inView: textContainer, spaced: 8.0, with: [.Top: 10, .Right: 10, .Bottom: 10, .Left: 10])
   }
   
   func addCenteredFirstLastNameView(inView: UIView) -> FirstLastNameXibView {
     let firstLastView = Architect.custom(FirstLastNameXibView(), inView: inView) {
-      Grunt.center($0, with: [.X: 0, .Y: 0])
+      center($0, with: [.X: 0, .Y: 0])
       $0.configureWith(firstName: "John", lastName: "Doe")
     }
     return firstLastView
@@ -101,10 +95,11 @@ class ViewController: UIViewController {
   func embedSomething() -> NSLayoutConstraint {
     let controller = EmbeddedController()
     var constraint: NSLayoutConstraint?
-    Architect.embed(controller, withParent: self, inView: self.view) {
-      $0.view.backgroundColor = UIColor.darkGrayColor()
-      constraint = Constrain.inset($0.view, with: [.Left: 20, .Right: 30, .Bottom: 10])[2]
-      Constrain.size($0.view, with: [.Height: 200])
+    Architect.embed(controller, withParent: self, inView: self.view) { controller in
+      controller.view.backgroundColor = UIColor.orangeColor()
+      inset(controller.view, with: [.Left: 20, .Right: 30])
+      constraint = pin((controller.view, .Top), to: (self.view, .Bottom), magnitude: 0.0)
+      size(controller.view, with: [.Height: 200])
     }
     return constraint!
   }

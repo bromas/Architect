@@ -18,13 +18,13 @@ class Sample2: UIViewController {
 //        Blueprint.printDocumentation()
         
         var centerGrey = Architect.custom(ColorView(color: UIColor.lightGrayColor()), inView: self.view) {
-            Grunt.center($0, with: [.X: 0, .Y: 0])
-            Grunt.size($0, withExtendedOptions: [.Width: (.Equal, 252, .Required), .Height: (.Equal, 159, .Required)])
+            Constrain.center($0, with: [.X: 0, .Y: 0])
+            Constrain.size($0, withExtendedOptions: [.Width: (.Equal, 252, .Required), .Height: (.Equal, 159, .Required)])
         }
         
         var redTextContainer = Architect.custom(ColorView(color: UIColor.redColor()), inView: self.view) {
-            Grunt.inset($0, with: [.Top: 60])
-            Grunt.center($0, with: [.X: 0])
+            Constrain.inset($0, with: [.Top: 60])
+            Constrain.center($0, with: [.X: 0])
         }
         
     }
