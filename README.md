@@ -52,6 +52,8 @@ pin                 |  distance from sibling view
 center              |  relative from center
 align (todo)        |  relative from edge
 
+Constrain methods are now also available as global functions.
+
 ####Combining
 
 Architect shines when combining Architect and Constrain calls together.
@@ -70,26 +72,9 @@ aLabel.text = "Old Style"
 Example using Architect:
 ```swift
 Architect.label(inView: self.view) {
-  Constrain.inset($0, with: [.Bottom : 60])
-  Constrain.center($0, with: [.X : 0])
+  inset($0, with: [.Bottom : 60])
+  center($0, with: [.X : 0])
   $0.text = "Architect"
 }
 ```
-
-#### Blueprint
-
-The Blueprint class allows developers to obtain the NSLayoutConstraints normally generated and applied by the Constrain calls in order to assigned constraints to local variables for future manipulation.
-
-```swift
-let constraints = Blueprint.inset(label, with: [.Left: 10, .Top: 10, .Right: 40])
-let topConstraint = constraints[1]
-```
-
-####WIP/TODO
-
-Currently UITextField does not have a constructor
-
-Refactor Constrain calls to return the constraints they add and deprecate/remove the  Blueprint class.
-
-There are no 'align' Constrain methods
 

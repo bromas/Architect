@@ -57,6 +57,11 @@ class ViewController: UIViewController {
         pin(left: $0, toRight: orangeView, magnitude: 0)
         pin(top: $0, toBottom: yellowView, magnitude: 0)
         inset($0, with: [.Right: 0, .Bottom: 0])
+        Architect.textField(inView: $0) {
+          center($0, with: [.X: 0, .Y: 0])
+          size($0, with: [.Width: 100])
+          $0.placeholder = "wat"
+        }
 //        let firstLastView = Architect.custom(FirstLastNameXibView(), inView: $0) {
 //          center($0, with: [.X: 0, .Y: 0])
 //          $0.configureWith(firstName: "John", lastName: "Doe")
