@@ -21,7 +21,7 @@ extension Constrain {
   public class func size(view: UIView, withExtendedOptions options: [BlueprintMeasure: ExtendedSizeOptions]) -> SizeResult {
     return size(view, withExtendedOptions: options)
   }
-    
+  
 }
 
 public func size(view: UIView, with options: [BlueprintMeasure: CGFloat]) -> SizeResult {

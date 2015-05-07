@@ -10,33 +10,33 @@ import Foundation
 import UIKit
 
 public class ArchitectLabel : UILabel {
-    
-    required public init(coder aDecoder: NSCoder?) {
-        super.init(coder: aDecoder!)
-    }
-    
-    init () {
-        super.init(frame: CGRectZero)
-        self.numberOfLines = 0
-    }
-    
-    override public func layoutSubviews() {
-        self.preferredMaxLayoutWidth = self.frame.size.width
-        super.layoutSubviews()
-    }
-    
+  
+  required public init(coder aDecoder: NSCoder?) {
+    super.init(coder: aDecoder!)
+  }
+  
+  init () {
+    super.init(frame: CGRectZero)
+    self.numberOfLines = 0
+  }
+  
+  override public func layoutSubviews() {
+    self.preferredMaxLayoutWidth = self.frame.size.width
+    super.layoutSubviews()
+  }
+  
 }
 
 extension Architect {
-    
-    public class func label (inView view: UIView, construct: ((label: UILabel) -> Void)) -> ArchitectLabel {
-        return self.custom(ArchitectLabel(), inView: view, construct: construct)
-    }
-    
-    public class func label (inView view: UIView) -> ArchitectLabel {
-        var label = UILabel()
-        label.numberOfLines = 0
-        return self.custom(ArchitectLabel(), inView: view)
-    }
-    
+  
+  public class func label (inView view: UIView, construct: ((label: UILabel) -> Void)) -> ArchitectLabel {
+    return self.custom(ArchitectLabel(), inView: view, construct: construct)
+  }
+  
+  public class func label (inView view: UIView) -> ArchitectLabel {
+    var label = UILabel()
+    label.numberOfLines = 0
+    return self.custom(ArchitectLabel(), inView: view)
+  }
+  
 }

@@ -11,9 +11,9 @@ import UIKit
 
 public class Blueprint {
   
-    public class func printDocumentation () -> Void {
-        
-    }
+  public class func printDocumentation () -> Void {
+    
+  }
   
 }
 

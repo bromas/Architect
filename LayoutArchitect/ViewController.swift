@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     self.aView.backgroundColor = .darkGrayColor()
     addScrollView(self.aView)
     let constraint = embedSomething()
-
+    
     UIView.performWithoutAnimation() {
       self.view.layoutIfNeeded()
     }
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         size($0, with: [.Width: 200, .Height: 600])
         self.addCenteredVerticalTextLabels($0, withWidth: 180)
       }
-
+      
       Architect.custom(ColorView(color: UIColor.greenColor()), inView: $0) {
         pin(left: $0, toRight: orangeView, magnitude: 0)
         pin(top: $0, toBottom: yellowView, magnitude: 0)

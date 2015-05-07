@@ -7,11 +7,11 @@
 //
 
 public class Architect {
-    
-    public class func printDocumentation () -> Void {
-        println("UIArchitect is a framework for simplifying view and layout generation.\n")
-        println("Use the Architect class to call for the construction of different views.\n(Hint: Try calling class methods on Architect with the names of what you want to build.)\n")
-    }
-    
+  
+  public class func printDocumentation () -> Void {
+    println("UIArchitect is a framework for simplifying view and layout generation.\n")
+    println("Use the Architect class to call for the construction of different views.\n(Hint: Try calling class methods on Architect with the names of what you want to build.)\n")
+  }
+  
 }
     

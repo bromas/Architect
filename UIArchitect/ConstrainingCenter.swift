@@ -12,15 +12,15 @@ import Foundation
 import UIKit
 
 extension Constrain {
-    
-    public class func center(view: UIView, from: UIView, with options: [BlueprintCoordinate: CGFloat]) -> CenterResult {
-        return center(view, from: from, with: options)
-    }
-    
-    public class func center(view: UIView, with options: [BlueprintCoordinate: CGFloat]) -> CenterResult {
-        return center(view, with: options)
-    }
-    
+  
+  public class func center(view: UIView, from: UIView, with options: [BlueprintCoordinate: CGFloat]) -> CenterResult {
+    return center(view, from: from, with: options)
+  }
+  
+  public class func center(view: UIView, with options: [BlueprintCoordinate: CGFloat]) -> CenterResult {
+    return center(view, with: options)
+  }
+  
 }
 
 public func center(view: UIView, with attributes: [BlueprintCoordinate: CGFloat]) -> CenterResult {

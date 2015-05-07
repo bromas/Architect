@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 extension Architect {
-    
-    public class func view (inView view: UIView, construct: (forView: UIView) -> Void) -> UIView {
-        return self.custom(UIView(), inView: view, construct: construct)
-    }
-    
-    public class func view (inView view: UIView) -> UIView {
-        return self.custom(UIView(), inView: view)
-    }
+  
+  public class func view (inView view: UIView, construct: (forView: UIView) -> Void) -> UIView {
+    return self.custom(UIView(), inView: view, construct: construct)
+  }
+  
+  public class func view (inView view: UIView) -> UIView {
+    return self.custom(UIView(), inView: view)
+  }
   
 }
