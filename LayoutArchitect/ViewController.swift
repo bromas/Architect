@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         pin(top: $0, toBottom: yellowView, magnitude: 0)
         inset($0, with: [.Right: 0, .Bottom: 0])
         let tField = Architect.textField(inView: $0) {
-          center($0, with: [.X: 0, .Y: 0])
+          align(center: $0, with: [.X: 0, .Y: 0])
           equate($0, with: [.Width: 100])
           $0.placeholder = "wat"
         }
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
           pin(top: $0, toBottom: tField, magnitude: 8.0)
           size($0, with: [.Width: 30])
           equate(heightOf: $0, fromRatioToWidth: 2.0)
-          center($0, with: [.X: 0])
+          align(center: $0, with: [.X: 0])
         }
 //        let firstLastView = Architect.custom(FirstLastNameXibView(), inView: $0) {
 //          center($0, with: [.X: 0, .Y: 0])
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
   func addCenteredVerticalTextLabels(toView: UIView, withWidth: CGFloat) {
     let textContainer = Architect.view(inView: toView) {
       $0.backgroundColor = UIColor.purpleColor()
-      center($0, with: [.X: 0, .Y: 0])
+      align(center: $0, with: [.X: 0, .Y: 0])
       equate($0, with: [.Width: withWidth])
     }
     

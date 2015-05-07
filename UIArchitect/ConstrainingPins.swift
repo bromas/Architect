@@ -13,22 +13,6 @@ public typealias EdgeGuide = (view: UIView, edge: BlueprintGuide)
 import Foundation
 import UIKit
 
-extension Constrain {
-  
-  public class func pin(from: EdgeGuide, to: EdgeGuide, at magnitude: CGFloat) -> NSLayoutConstraint {
-    return pin(from, to: to, at: magnitude)
-  }
-  
-  public class func pin(view: UIView, to toView: UIView, with options: [BlueprintGuide: (toEdge: BlueprintGuide, magnitude: CGFloat)]) -> PinResult {
-    return pin(view, to: toView, with: options)
-  }
-  
-  public class func pin(view: UIView, to toView: UIView, withExtendedOptions options: [BlueprintGuide: (toEdge: BlueprintGuide, relation: BlueprintRelation, magnitude: CGFloat, priority: BlueprintPriority)]) -> PinResult {
-    return pin(view, to: toView, withExtendedOptions: options)
-  }
-  
-}
-
 public func pin(#top: UIView, #toBottom: UIView, #magnitude: CGFloat) -> NSLayoutConstraint {
   return pin((top, .Top), to: (toBottom, .Bottom), magnitude: magnitude)
 }

@@ -12,23 +12,6 @@ public typealias ExtendedInsetOptions = (relation: BlueprintRelation, magnitude:
 import Foundation
 import UIKit
 
-extension Constrain {
-  
-  public class func inset(view: UIView, with options: [BlueprintGuide: CGFloat]) -> [NSLayoutConstraint] {
-    assertSuperview(forView: view)
-    let constraints = inset(view, with: options)
-    view.superview!.addConstraints(constraints)
-    return constraints
-  }
-  
-  public class func inset(view: UIView, withExtendedOptions options: [BlueprintGuide: (relation: BlueprintRelation, magnitude: CGFloat, priority: BlueprintPriority)]) -> [NSLayoutConstraint] {
-    assertSuperview(forView: view)
-    let constraints = inset(view, withExtendedOptions: options)
-    view.superview!.addConstraints(constraints)
-    return constraints
-  }
-}
-
 public func inset(view: UIView, withExtendedOptions options: [BlueprintGuide: (relation: BlueprintRelation, magnitude: CGFloat, priority: BlueprintPriority)]) -> InsetResult {
   
   let superview = assertSuperview(forView: view)
@@ -47,7 +30,9 @@ public func inset(view: UIView, withExtendedOptions options: [BlueprintGuide: (r
       formatString = "V:[forView]-(\(insetString))-|"
     case .Right:
       formatString = "H:[forView]-(\(insetString))-|"
-    case .Center:
+    case .CenterX:
+      assert(false, "Do not inset the center coordinate")
+    case .CenterY:
       assert(false, "Do not inset the center coordinate")
     }
     
@@ -76,7 +61,9 @@ public func inset(view: UIView, with options: [BlueprintGuide: CGFloat]) -> Inse
       formatString = "V:[forView]-(insetSize)-|"
     case .Right:
       formatString = "H:[forView]-(insetSize)-|"
-    case .Center:
+    case .CenterX:
+      assert(false, "Do not inset the center coordinate")
+    case .CenterY:
       assert(false, "Do not inset the center coordinate")
     }
     

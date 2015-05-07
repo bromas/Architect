@@ -10,11 +10,11 @@ import Foundation
 
 extension Blueprint {
   
-  public class func verticallyLayout(views: [UIView], inView: UIView) -> [UIView] {
+  public class func verticalLayout(views: [UIView], inView: UIView) -> [UIView] {
     return verticalLayout(views, inView: inView, spaced: 0.0, with: [.Top: 0, .Right: 0, .Bottom: 0, .Left: 0])
   }
   
-  public class func verticallyLayout(views: [UIView], inView: UIView, with: [BlueprintGuide: CGFloat]) -> [UIView] {
+  public class func verticalLayout(views: [UIView], inView: UIView, with: [BlueprintGuide: CGFloat]) -> [UIView] {
     return verticalLayout(views, inView: inView, spaced: 0.0, with: with)
   }
   
@@ -27,7 +27,7 @@ extension Blueprint {
     let count = views.count
     var lastManagedView: UIView?
     for (index, view) in enumerate(views) {
-      center(view, with: [.X: 0])
+      align(center: view, with: [.X: 0])
       switch count {
       case 1:
         inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])

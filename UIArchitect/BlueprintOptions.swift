@@ -14,7 +14,8 @@ public enum BlueprintGuide {
   case Bottom
   case Left
   case Right
-  case Center
+  case CenterX
+  case CenterY
   
   public func layoutAttribute () -> NSLayoutAttribute {
     switch self {
@@ -26,8 +27,10 @@ public enum BlueprintGuide {
       return NSLayoutAttribute.Bottom
     case .Left:
       return NSLayoutAttribute.Left
-    case .Center:
+    case .CenterX:
       return NSLayoutAttribute.CenterX
+    case .CenterY:
+      return NSLayoutAttribute.CenterY
     }
   }
   
@@ -41,8 +44,10 @@ public enum BlueprintGuide {
       return NSLayoutAttribute.Bottom
     case .Left:
       return NSLayoutAttribute.Left
-    case .Center:
+    case .CenterX:
       return NSLayoutAttribute.CenterX
+    case .CenterY:
+      return NSLayoutAttribute.CenterY
     }
   }
 }

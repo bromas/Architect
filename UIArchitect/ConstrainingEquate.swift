@@ -12,34 +12,6 @@ public typealias ExtendedEquateOptions = (relation: BlueprintRelation, magnitude
 import Foundation
 import UIKit
 
-extension Constrain {
-  
-  public class func equate(heightOf view: UIView, fromRatioToWidth: CGFloat) -> NSLayoutConstraint {
-    return equate(heightOf: view, fromRatioToWidth: fromRatioToWidth)
-  }
-  
-  public class func equate(widthOf view: UIView, fromRatioToHeight: CGFloat) -> NSLayoutConstraint {
-    return equate(widthOf: view, fromRatioToHeight: fromRatioToHeight)
-  }
-  
-  public class func equate(view: UIView, with options: [BlueprintMeasure: CGFloat]) -> EquateResult {
-    return equate(view, with: options)
-  }
-  
-  public class func equate(view: UIView, withExtendedOptions options: [BlueprintMeasure: ExtendedEquateOptions]) -> EquateResult {
-    return equate(view, withExtendedOptions: options)
-  }
-  
-  public class func equate(view: UIView, to toView: UIView, with options: [BlueprintMeasure: CGFloat]) -> EquateResult {
-    return equate(view, to: toView, with: options)
-  }
-  
-  public func equate(view: UIView, to toView: UIView, withExtendedOptions options: [BlueprintMeasure: ExtendedEquateOptions]) -> EquateResult {
-    return equate(view, to: toView, withExtendedOptions: options)
-  }
-  
-}
-
 public func equate(heightOf view: UIView, #fromRatioToWidth: CGFloat) -> NSLayoutConstraint {
   let constraint = NSLayoutConstraint(item: view, attribute: .Height, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: fromRatioToWidth, constant: 0)
   view.addConstraint(constraint)

@@ -33,7 +33,7 @@
 		D32BAFCD1A33FED500894407 /* TextViewArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3F81973835D007A3990 /* TextViewArchitectures.swift */; };
 		D32BAFCE1A33FED500894407 /* ButtonArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3FB19738BDE007A3990 /* ButtonArchitectures.swift */; };
 		D32BAFCF1A33FED500894407 /* ConstrainingSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3F019735BF1007A3990 /* ConstrainingSize.swift */; };
-		D32BAFD01A33FED500894407 /* ConstrainingCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3FF197391A0007A3990 /* ConstrainingCenter.swift */; };
+		D32BAFD01A33FED500894407 /* ConstrainingAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3FF197391A0007A3990 /* ConstrainingAlign.swift */; };
 		D32BAFD11A33FED500894407 /* ConstrainingInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */; };
 		D32BAFD21A33FED500894407 /* ConstrainingPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B2FDAA198D1D52007B2466 /* ConstrainingPins.swift */; };
 		D32BAFD31A33FEDC00894407 /* XibBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FF7B52198D400C0069A08C /* XibBasedView.swift */; };
@@ -131,7 +131,7 @@
 		D3C6E3F81973835D007A3990 /* TextViewArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewArchitectures.swift; sourceTree = "<group>"; };
 		D3C6E3FB19738BDE007A3990 /* ButtonArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonArchitectures.swift; sourceTree = "<group>"; };
 		D3C6E3FD19739114007A3990 /* CustomArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomArchitectures.swift; sourceTree = "<group>"; };
-		D3C6E3FF197391A0007A3990 /* ConstrainingCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingCenter.swift; sourceTree = "<group>"; };
+		D3C6E3FF197391A0007A3990 /* ConstrainingAlign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingAlign.swift; sourceTree = "<group>"; };
 		D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingInsets.swift; sourceTree = "<group>"; };
 		D3C6E4081973B00C007A3990 /* Constrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrain.swift; sourceTree = "<group>"; };
 		D3D4938B196F92BC00432A50 /* LayoutArchitect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutArchitect.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				D3C6E3F019735BF1007A3990 /* ConstrainingSize.swift */,
-				D3C6E3FF197391A0007A3990 /* ConstrainingCenter.swift */,
+				D3C6E3FF197391A0007A3990 /* ConstrainingAlign.swift */,
 				D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */,
 				D3B2FDAA198D1D52007B2466 /* ConstrainingPins.swift */,
 				D373851C1AFB2DD20006766C /* ConstrainingEquate.swift */,
@@ -593,7 +593,7 @@
 				D38141421AFB0D5700022F35 /* TextFieldArchitectures.swift in Sources */,
 				D32BAFCC1A33FED500894407 /* LabelArchitectures.swift in Sources */,
 				D32BAFCF1A33FED500894407 /* ConstrainingSize.swift in Sources */,
-				D32BAFD01A33FED500894407 /* ConstrainingCenter.swift in Sources */,
+				D32BAFD01A33FED500894407 /* ConstrainingAlign.swift in Sources */,
 				D32BAFD81A33FEDC00894407 /* Blueprint.swift in Sources */,
 				D32BAFCA1A33FED500894407 /* ViewArchitectures.swift in Sources */,
 				D373851E1AFB2EF90006766C /* ConstrainingEquate.swift in Sources */,
