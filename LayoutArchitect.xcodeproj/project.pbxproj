@@ -43,6 +43,7 @@
 		D32BAFD71A33FEDC00894407 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4081973B00C007A3990 /* Constrain.swift */; };
 		D32BAFD81A33FEDC00894407 /* Blueprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3D9196FB155007A3990 /* Blueprint.swift */; };
 		D32BAFD91A33FEDC00894407 /* BlueprintOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B12361197B4B530044AB40 /* BlueprintOptions.swift */; };
+		D373851E1AFB2EF90006766C /* ConstrainingEquate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373851C1AFB2DD20006766C /* ConstrainingEquate.swift */; };
 		D38141421AFB0D5700022F35 /* TextFieldArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */; };
 		D39DF1C819E321AC00839249 /* SomeXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39DF1C719E321AC00839249 /* SomeXibView.xib */; };
 		D39DF1CA19E321BA00839249 /* SomeXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DF1C919E321BA00839249 /* SomeXibView.swift */; };
@@ -111,6 +112,7 @@
 		D32BAFB31A33FEC500894407 /* ArchitectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32BAFBB1A33FEC500894407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D32BAFBC1A33FEC500894407 /* ArchitectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectTests.swift; sourceTree = "<group>"; };
+		D373851C1AFB2DD20006766C /* ConstrainingEquate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingEquate.swift; sourceTree = "<group>"; };
 		D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldArchitectures.swift; sourceTree = "<group>"; };
 		D39DF1C719E321AC00839249 /* SomeXibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SomeXibView.xib; sourceTree = "<group>"; };
 		D39DF1C919E321BA00839249 /* SomeXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeXibView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				D3C6E3FF197391A0007A3990 /* ConstrainingCenter.swift */,
 				D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */,
 				D3B2FDAA198D1D52007B2466 /* ConstrainingPins.swift */,
+				D373851C1AFB2DD20006766C /* ConstrainingEquate.swift */,
 			);
 			name = Constraining;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				D32BAFD01A33FED500894407 /* ConstrainingCenter.swift in Sources */,
 				D32BAFD81A33FEDC00894407 /* Blueprint.swift in Sources */,
 				D32BAFCA1A33FED500894407 /* ViewArchitectures.swift in Sources */,
+				D373851E1AFB2EF90006766C /* ConstrainingEquate.swift in Sources */,
 				D3E581B31AADF9DC00D5A933 /* DirectionalLayouts.swift in Sources */,
 				D32BAFCD1A33FED500894407 /* TextViewArchitectures.swift in Sources */,
 				D32BAFD51A33FEDC00894407 /* UIView_Architect.swift in Sources */,

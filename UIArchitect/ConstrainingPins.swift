@@ -45,6 +45,12 @@ public func pin(#left: UIView, #toRight: UIView, #magnitude: CGFloat) -> NSLayou
   return pin((left, .Left), to: (toRight, .Right), magnitude: magnitude)
 }
 
+public func pin(view: UIView, #edge:BlueprintGuide, #toGuide: UILayoutSupport, #inController: UIViewController, #constant: CGFloat) -> NSLayoutConstraint {
+  let constraint = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: toGuide, attribute: .Bottom, multiplier: 1.0, constant: constant)
+  inController.view.addConstraint(constraint)
+  return constraint
+}
+
 public func pin(from: EdgeGuide, #to: EdgeGuide, #magnitude: CGFloat) -> NSLayoutConstraint {
   var newOptions = [BlueprintGuide: ExtendedPinningOptions]()
   newOptions[from.edge] = (to.edge, BlueprintRelation.Equal, magnitude, BlueprintPriority.Required)

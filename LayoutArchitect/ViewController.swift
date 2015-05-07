@@ -43,13 +43,13 @@ class ViewController: UIViewController {
       
       let yellowView = Architect.custom(ColorView(color: UIColor.yellowColor()), inView: $0) {
         inset($0, with: [.Left: 0, .Top: 0, .Right: 0])
-        size($0, with: [.Height: 50, .Width: 600])
+        equate($0, with: [.Height: 50, .Width: 600])
       }
       
       let orangeView = Architect.custom(ColorView(color: UIColor.orangeColor()), inView: $0) {
         pin(top: $0, toBottom: yellowView, magnitude: 0.0)
         inset($0, with: [.Left: 0, .Bottom: 0])
-        size($0, with: [.Width: 200, .Height: 600])
+        equate($0, with: [.Width: 200, .Height: 600])
         self.addCenteredVerticalTextLabels($0, withWidth: 180)
       }
       
@@ -57,10 +57,17 @@ class ViewController: UIViewController {
         pin(left: $0, toRight: orangeView, magnitude: 0)
         pin(top: $0, toBottom: yellowView, magnitude: 0)
         inset($0, with: [.Right: 0, .Bottom: 0])
-        Architect.textField(inView: $0) {
+        let tField = Architect.textField(inView: $0) {
           center($0, with: [.X: 0, .Y: 0])
-          size($0, with: [.Width: 100])
+          equate($0, with: [.Width: 100])
           $0.placeholder = "wat"
+        }
+        
+        Architect.custom(ColorView(color: .redColor()), inView: $0) {
+          pin(top: $0, toBottom: tField, magnitude: 8.0)
+          size($0, with: [.Width: 30])
+          equate(heightOf: $0, fromRatioToWidth: 2.0)
+          center($0, with: [.X: 0])
         }
 //        let firstLastView = Architect.custom(FirstLastNameXibView(), inView: $0) {
 //          center($0, with: [.X: 0, .Y: 0])
@@ -75,7 +82,7 @@ class ViewController: UIViewController {
     let textContainer = Architect.view(inView: toView) {
       $0.backgroundColor = UIColor.purpleColor()
       center($0, with: [.X: 0, .Y: 0])
-      size($0, with: [.Width: withWidth])
+      equate($0, with: [.Width: withWidth])
     }
     
     let first = Architect.label(inView: textContainer) {
@@ -99,7 +106,7 @@ class ViewController: UIViewController {
       controller.view.backgroundColor = UIColor.orangeColor()
       inset(controller.view, with: [.Left: 20, .Right: 30])
       constraint = pin((controller.view, .Top), to: (self.view, .Bottom), magnitude: 0.0)
-      size(controller.view, with: [.Height: 200])
+      equate(controller.view, with: [.Height: 200])
     }
     return constraint!
   }
