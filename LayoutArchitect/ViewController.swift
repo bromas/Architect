@@ -29,11 +29,12 @@ class ViewController: UIViewController {
       self.view.layoutIfNeeded()
     }
     
-    UIView.animateWithDuration(2.0) {
+    UIView.animateWithDuration(1.0) {
       constraint.constant = -100
       self.view.layoutIfNeeded()
     }
   }
+  
   
   func addScrollView (toView: UIView) -> Void {
     
@@ -64,6 +65,7 @@ class ViewController: UIViewController {
     }
   }
   
+  
   func addCenteredVerticalTextLabels(toView: UIView, withWidth: CGFloat) {
     let textContainer = Architect.view(inView: toView) {
       $0.backgroundColor = UIColor.purpleColor()
@@ -75,14 +77,15 @@ class ViewController: UIViewController {
       $0.text = "Here is some text that should be laid out in the orange column"
     }
     let second = Architect.label(inView: textContainer) {
-      $0.text = "This should be easy to do and layout verticaslly using the Constrain API"
+      $0.text = "This should be easy to do and layout vertically using the Blueprint API"
     }
     let third = Architect.label(inView: textContainer) {
-      $0.text = "How do I look?"
+      $0.text = "Nice."
     }
     
     Blueprint.verticalLayout([first, second, third], inView: textContainer, spaced: 8.0, with: [.Top: 10, .Right: 10, .Bottom: 10, .Left: 10])
   }
+  
   
   func addCenteredFirstLastNameView(inView: UIView) -> FirstLastNameXibView {
     let firstLastView = Architect.custom(FirstLastNameXibView(), inView: inView) {
@@ -92,8 +95,9 @@ class ViewController: UIViewController {
     return firstLastView
   }
   
+  
   func embedSomething() -> NSLayoutConstraint {
-    let controller = EmbeddedController()
+    let controller = UIViewController()
     var constraint: NSLayoutConstraint?
     Architect.embed(controller, withParent: self, inView: self.view) { controller in
       controller.view.backgroundColor = UIColor.orangeColor()

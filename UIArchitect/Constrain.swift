@@ -12,8 +12,7 @@ import UIKit
 public class Constrain {
   
   public class func printDocumentation () -> Void {
-    println("The Blueprint class generates [NSLayoutConstraint]s \n")
-    println("Blueprint collections are generated using using keywords")
+    println("The Constrain class generates and adds NSLayoutConstraints \n")
     println("--------------------------------------------")
     println("Pin - connects edges of sibling views")
     println("Inset - connects edges to the superview")

@@ -50,8 +50,6 @@
 		D39DF1D019E49A0F00839249 /* FirstLastNameXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DF1CF19E49A0F00839249 /* FirstLastNameXibView.swift */; };
 		D39DF1D219E49ADB00839249 /* FirstLastNameXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39DF1D119E49ADB00839249 /* FirstLastNameXibView.xib */; };
 		D3C6E3EF19718E81007A3990 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3EE19718E81007A3990 /* ColorView.swift */; };
-		D3C6E4051973A19C007A3990 /* SampleCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4041973A19C007A3990 /* SampleCode.swift */; };
-		D3C6E4071973A96C007A3990 /* Sample2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4061973A96C007A3990 /* Sample2.swift */; };
 		D3D49391196F92BC00432A50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D49390196F92BC00432A50 /* AppDelegate.swift */; };
 		D3D49393196F92BC00432A50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D49392196F92BC00432A50 /* ViewController.swift */; };
 		D3D49396196F92BC00432A50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D49394196F92BC00432A50 /* Main.storyboard */; };
@@ -59,7 +57,6 @@
 		D3D493A4196F92BC00432A50 /* LayoutArchitectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D493A3196F92BC00432A50 /* LayoutArchitectTests.swift */; };
 		D3E581B11AAD5BC300D5A933 /* EmbedArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E581B01AAD5BC300D5A933 /* EmbedArchitectures.swift */; };
 		D3E581B31AADF9DC00D5A933 /* DirectionalLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E581B21AADF9DC00D5A933 /* DirectionalLayouts.swift */; };
-		D3E581B51AAE1EA300D5A933 /* EmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E581B41AAE1EA300D5A933 /* EmbeddedController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,8 +131,6 @@
 		D3C6E3FD19739114007A3990 /* CustomArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomArchitectures.swift; sourceTree = "<group>"; };
 		D3C6E3FF197391A0007A3990 /* ConstrainingCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingCenter.swift; sourceTree = "<group>"; };
 		D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingInsets.swift; sourceTree = "<group>"; };
-		D3C6E4041973A19C007A3990 /* SampleCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCode.swift; sourceTree = "<group>"; };
-		D3C6E4061973A96C007A3990 /* Sample2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample2.swift; sourceTree = "<group>"; };
 		D3C6E4081973B00C007A3990 /* Constrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrain.swift; sourceTree = "<group>"; };
 		D3D4938B196F92BC00432A50 /* LayoutArchitect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutArchitect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D4938F196F92BC00432A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,7 +148,6 @@
 		D3D493D6196F933000432A50 /* Architect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Architect.swift; sourceTree = "<group>"; };
 		D3E581B01AAD5BC300D5A933 /* EmbedArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedArchitectures.swift; sourceTree = "<group>"; };
 		D3E581B21AADF9DC00D5A933 /* DirectionalLayouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionalLayouts.swift; sourceTree = "<group>"; };
-		D3E581B41AAE1EA300D5A933 /* EmbeddedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedController.swift; sourceTree = "<group>"; };
 		D3FF7B52198D400C0069A08C /* XibBasedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibBasedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -279,15 +273,6 @@
 			name = CustomViews;
 			sourceTree = "<group>";
 		};
-		D3C6E4031973A183007A3990 /* Sample Code */ = {
-			isa = PBXGroup;
-			children = (
-				D3C6E4041973A19C007A3990 /* SampleCode.swift */,
-				D3C6E4061973A96C007A3990 /* Sample2.swift */,
-			);
-			name = "Sample Code";
-			sourceTree = "<group>";
-		};
 		D3D49382196F92BC00432A50 = {
 			isa = PBXGroup;
 			children = (
@@ -315,11 +300,9 @@
 		D3D4938D196F92BC00432A50 /* LayoutArchitect */ = {
 			isa = PBXGroup;
 			children = (
-				D3C6E4031973A183007A3990 /* Sample Code */,
 				D3C6E3ED19718E6C007A3990 /* CustomViews */,
 				D3D49390196F92BC00432A50 /* AppDelegate.swift */,
 				D3D49392196F92BC00432A50 /* ViewController.swift */,
-				D3E581B41AAE1EA300D5A933 /* EmbeddedController.swift */,
 				D3D49394196F92BC00432A50 /* Main.storyboard */,
 				D3D49397196F92BC00432A50 /* Images.xcassets */,
 				D3D4938E196F92BC00432A50 /* Supporting Files */,
@@ -634,14 +617,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D39DF1D019E49A0F00839249 /* FirstLastNameXibView.swift in Sources */,
-				D3C6E4051973A19C007A3990 /* SampleCode.swift in Sources */,
 				D3C6E3EF19718E81007A3990 /* ColorView.swift in Sources */,
 				D39DF1CE19E42DA700839249 /* ARCImageZoom.swift in Sources */,
 				D39DF1CA19E321BA00839249 /* SomeXibView.swift in Sources */,
 				D3D49393196F92BC00432A50 /* ViewController.swift in Sources */,
-				D3C6E4071973A96C007A3990 /* Sample2.swift in Sources */,
 				D3D49391196F92BC00432A50 /* AppDelegate.swift in Sources */,
-				D3E581B51AAE1EA300D5A933 /* EmbeddedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
