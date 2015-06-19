@@ -35,21 +35,19 @@ class ViewController: UIViewController {
     }
   }
   
-  
   func addScrollView (toView: UIView) -> Void {
-    
     self.scroll = Architect.custom(UIScrollView(), inView: toView) {
       inset($0, with: [.Top: 0, .Left: 0, .Bottom: 100, .Right: 0])
       
       let yellowView = Architect.custom(ColorView(color: UIColor.yellowColor()), inView: $0) {
         inset($0, with: [.Left: 0, .Top: 0, .Right: 0])
-        equate($0, with: [.Height: 50, .Width: 600])
+        size($0, with: [.Height: 50, .Width: 600])
       }
       
       let orangeView = Architect.custom(ColorView(color: UIColor.orangeColor()), inView: $0) {
         pin(top: $0, toBottom: yellowView, magnitude: 0.0)
         inset($0, with: [.Left: 0, .Bottom: 0])
-        equate($0, with: [.Width: 200, .Height: 600])
+        size($0, with: [.Width: 200, .Height: 600])
         self.addCenteredVerticalTextLabels($0, withWidth: 180)
       }
       
@@ -59,7 +57,7 @@ class ViewController: UIViewController {
         inset($0, with: [.Right: 0, .Bottom: 0])
         let tField = Architect.textField(inView: $0) {
           align(center: $0, with: [.X: 0, .Y: 0])
-          equate($0, with: [.Width: 100])
+          size($0, with: [.Width: 100])
           $0.placeholder = "wat"
         }
         
@@ -69,14 +67,9 @@ class ViewController: UIViewController {
           equate(heightOf: $0, fromRatioToWidth: 2.0)
           align(center: $0, with: [.X: 0])
         }
-//        let firstLastView = Architect.custom(FirstLastNameXibView(), inView: $0) {
-//          center($0, with: [.X: 0, .Y: 0])
-//          $0.configureWith(firstName: "John", lastName: "Doe")
-//        }
       }
     }
   }
-  
   
   func addCenteredVerticalTextLabels(toView: UIView, withWidth: CGFloat) {
     let textContainer = Architect.view(inView: toView) {
@@ -98,14 +91,13 @@ class ViewController: UIViewController {
     Blueprint.verticalLayout([first, second, third], inView: textContainer, spaced: 8.0, with: [.Top: 10, .Right: 10, .Bottom: 10, .Left: 10])
   }
   
-  
   func embedSomething() -> NSLayoutConstraint {
     let controller = UIViewController()
     var constraint: NSLayoutConstraint?
     Architect.embed(controller, withParent: self, inView: self.view) { controller in
       controller.view.backgroundColor = UIColor.orangeColor()
       inset(controller.view, with: [.Left: 20, .Right: 30])
-      constraint = pin((controller.view, .Top), to: (self.view, .Bottom), magnitude: 0.0)
+      constraint = pin(top: controller.view, toBottom: self.view, magnitude: 0.0)
       equate(controller.view, with: [.Height: 200])
     }
     return constraint!

@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		D3270DD91A32478D00C8D9B4 /* ArchitectUniversal */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = D3270DDA1A32478D00C8D9B4 /* Build configuration list for PBXAggregateTarget "ArchitectUniversal" */;
-			buildPhases = (
-				D3270DDD1A32479400C8D9B4 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = ArchitectUniversal;
-			productName = ArchitectUniversal;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		D32BAFAE1A33FEC500894407 /* Architect.h in Headers */ = {isa = PBXBuildFile; fileRef = D32BAFAD1A33FEC500894407 /* Architect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D32BAFB41A33FEC500894407 /* Architect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32BAFA91A33FEC500894407 /* Architect.framework */; };
@@ -37,7 +23,6 @@
 		D32BAFD11A33FED500894407 /* ConstrainingInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */; };
 		D32BAFD21A33FED500894407 /* ConstrainingPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B2FDAA198D1D52007B2466 /* ConstrainingPins.swift */; };
 		D32BAFD31A33FEDC00894407 /* XibBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FF7B52198D400C0069A08C /* XibBasedView.swift */; };
-		D32BAFD41A33FEDC00894407 /* UIArchitect.h in Headers */ = {isa = PBXBuildFile; fileRef = D3D493B6196F92F200432A50 /* UIArchitect.h */; };
 		D32BAFD51A33FEDC00894407 /* UIView_Architect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E3EB19718617007A3990 /* UIView_Architect.swift */; };
 		D32BAFD61A33FEDC00894407 /* Architect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D493D6196F933000432A50 /* Architect.swift */; };
 		D32BAFD71A33FEDC00894407 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6E4081973B00C007A3990 /* Constrain.swift */; };
@@ -144,7 +129,6 @@
 		D3D493A2196F92BC00432A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3D493A3196F92BC00432A50 /* LayoutArchitectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutArchitectTests.swift; sourceTree = "<group>"; };
 		D3D493B5196F92F200432A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3D493B6196F92F200432A50 /* UIArchitect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIArchitect.h; sourceTree = "<group>"; };
 		D3D493C2196F92F300432A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3D493C3196F92F300432A50 /* UIArchitectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIArchitectTests.swift; sourceTree = "<group>"; };
 		D3D493D6196F933000432A50 /* Architect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Architect.swift; sourceTree = "<group>"; };
@@ -342,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				D32F490519C026E2005C944F /* CustomViews */,
-				D3D493B6196F92F200432A50 /* UIArchitect.h */,
 				D3C6E3EB19718617007A3990 /* UIView_Architect.swift */,
 				D3D493D6196F933000432A50 /* Architect.swift */,
 				D3C6E4081973B00C007A3990 /* Constrain.swift */,
@@ -397,7 +380,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D32BAFD41A33FEDC00894407 /* UIArchitect.h in Headers */,
 				D32BAFAE1A33FEC500894407 /* Architect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,9 +470,6 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Brian Thomas";
 				TargetAttributes = {
-					D3270DD91A32478D00C8D9B4 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
 					D32BAFA81A33FEC500894407 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -522,7 +501,6 @@
 			targets = (
 				D3D4938A196F92BC00432A50 /* LayoutArchitect */,
 				D3D4939C196F92BC00432A50 /* LayoutArchitectTests */,
-				D3270DD91A32478D00C8D9B4 /* ArchitectUniversal */,
 				D32BAFA81A33FEC500894407 /* Architect */,
 				D32BAFB21A33FEC500894407 /* ArchitectTests */,
 			);
@@ -563,22 +541,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		D3270DDD1A32479400C8D9B4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "TARGET_NAME=Architect\nOS_SDK=iphoneos8.1\nSIM_SDK=iphonesimulator8.1\nLIPO_FOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\nxcodebuild -target ${TARGET_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk ${OS_SDK} BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target ${TARGET_NAME} -scheme ${TARGET_NAME} -sdk ${SIM_SDK} -configuration Debug clean build BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\nmkdir -p \"${LIPO_FOLDER}\"\ncp -R ${BUILD_DIR}/${CONFIGURATION}-iphoneos/${TARGET_NAME}.framework ${LIPO_FOLDER}/\nrm ${LIPO_FOLDER}/${TARGET_NAME}.framework/${TARGET_NAME}\n\nlipo -create -output \"${LIPO_FOLDER}/${TARGET_NAME}.framework/${TARGET_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${TARGET_NAME}.framework/${TARGET_NAME}\" \"${BUILD_DIR}/Debug-iphonesimulator/${TARGET_NAME}.framework/${TARGET_NAME}\"\n\n# Comment this out or change the final_outputfolder if needed\nFINAL_OUTPUTFOLDER=/users/${USER}/Desktop/\nmkdir -p \"${FINAL_OUTPUTFOLDER}\"\ncp -R ${LIPO_FOLDER}/${TARGET_NAME}.framework ${FINAL_OUTPUTFOLDER}/";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D32BAFA41A33FEC500894407 /* Sources */ = {
@@ -674,20 +636,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D3270DDB1A32478D00C8D9B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		D3270DDC1A32478D00C8D9B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		D32BAFC41A33FEC500894407 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -904,15 +852,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D3270DDA1A32478D00C8D9B4 /* Build configuration list for PBXAggregateTarget "ArchitectUniversal" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3270DDB1A32478D00C8D9B4 /* Debug */,
-				D3270DDC1A32478D00C8D9B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D32BAFC31A33FEC500894407 /* Build configuration list for PBXNativeTarget "Architect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
