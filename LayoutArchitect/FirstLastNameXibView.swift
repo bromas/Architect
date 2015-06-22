@@ -27,7 +27,7 @@ class FirstLastNameXibView : XibBasedView {
         super.init()
     }
     
-    func configureWith (#firstName :String, lastName :String) -> Void {
+    func configureWith (firstName firstName :String, lastName :String) -> Void {
         firstNameLabel?.text = firstName
         lastNameLabel?.text = lastName
         self.layoutIfNeeded()

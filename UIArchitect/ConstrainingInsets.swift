@@ -19,7 +19,7 @@ public func inset(view: UIView, withExtendedOptions options: [BlueprintGuide: (r
   
   for (direction, option) in options {
     var formatString: String = ""
-    var insetString = "\(option.relation.string())\(option.magnitude)@\(option.priority.float())"
+    let insetString = "\(option.relation.string())\(option.magnitude)@\(option.priority.float())"
     
     switch direction {
     case .Top:
@@ -37,7 +37,7 @@ public func inset(view: UIView, withExtendedOptions options: [BlueprintGuide: (r
     }
     
     let metrics = ["insetSize": option.magnitude]
-    constraints[direction] = (NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(0), metrics: metrics, views: ["forView":view])[0] as? NSLayoutConstraint)
+    constraints[direction] = (NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: ["forView":view])[0])
     superview.addConstraint(constraints[direction]!)
   }
   
@@ -68,7 +68,7 @@ public func inset(view: UIView, with options: [BlueprintGuide: CGFloat]) -> Inse
     }
     
     let metrics = ["insetSize":magnitude]
-    constraints[option] = (NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(0), metrics: metrics, views: ["forView":view])[0] as! NSLayoutConstraint)
+    constraints[option] = (NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: ["forView":view])[0])
     superview.addConstraint(constraints[option]!)
   }
   

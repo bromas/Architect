@@ -33,17 +33,17 @@ public func align(center view: UIView, with attributes: [BlueprintCoordinate: CG
 
 public func align(center view: UIView, from fromView: UIView, with attributes: [BlueprintCoordinate: CGFloat]) -> CenterResult {
   
-  let superview = commonSuperview(view, fromView)
+  let superview = commonSuperview(view, second: fromView)
   var constraints = CenterResult()
   
   for (option, magnitude) in attributes {
     switch option {
     case .X:
       constraints[.X] = (NSLayoutConstraint(item: view, attribute: .CenterX, relatedBy: .Equal, toItem: fromView, attribute: .CenterX, multiplier: 1.0, constant: CGFloat(magnitude)))
-      view.superview!.addConstraint(constraints[.X]!)
+      superview!.addConstraint(constraints[.X]!)
     case .Y:
       constraints[.Y] = (NSLayoutConstraint(item: view, attribute: .CenterY, relatedBy: .Equal, toItem: fromView, attribute: .CenterY, multiplier: 1.0, constant: CGFloat(magnitude)))
-      view.superview!.addConstraint(constraints[.Y]!)
+      superview!.addConstraint(constraints[.Y]!)
     }
   }
   

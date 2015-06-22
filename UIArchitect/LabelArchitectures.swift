@@ -34,7 +34,7 @@ extension Architect {
   }
   
   public class func label (inView view: UIView) -> ArchitectLabel {
-    var label = UILabel()
+    let label = UILabel()
     label.numberOfLines = 0
     return self.custom(ArchitectLabel(), inView: view)
   }

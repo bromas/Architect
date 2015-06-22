@@ -10,12 +10,12 @@ import Foundation
 
 extension Architect {
   
-  public class func button (#type: UIButtonType, inView view: UIView, construct: ((label: UIButton) -> Void)) -> UIButton {
-    return self.custom(UIButton.buttonWithType(type) as! UIButton, inView: view, construct: construct)
+  public class func button (type type: UIButtonType, inView view: UIView, construct: ((label: UIButton) -> Void)) -> UIButton {
+    return self.custom(UIButton(type: type) as UIButton, inView: view, construct: construct)
   }
   
-  public class func button (#type: UIButtonType, inView view: UIView) -> UIButton {
-    return self.custom(UIButton.buttonWithType(type) as! UIButton, inView: view)
+  public class func button (type type: UIButtonType, inView view: UIView) -> UIButton {
+    return self.custom(UIButton(type: type) as UIButton, inView: view)
   }
   
 }

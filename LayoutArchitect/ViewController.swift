@@ -58,13 +58,14 @@ class ViewController: UIViewController {
         let tField = Architect.textField(inView: $0) {
           align(center: $0, with: [.X: 0, .Y: 0])
           size($0, with: [.Width: 100])
+          $0.textAlignment = .Center
           $0.placeholder = "wat"
         }
         
         Architect.custom(ColorView(color: .redColor()), inView: $0) {
           pin(top: $0, toBottom: tField, magnitude: 8.0)
           size($0, with: [.Width: 30])
-          equate(heightOf: $0, fromRatioToWidth: 2.0)
+          equate(heightOf: $0, fromRatioToWidth: 2)
           align(center: $0, with: [.X: 0])
         }
       }

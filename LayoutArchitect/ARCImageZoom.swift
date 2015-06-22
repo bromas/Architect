@@ -45,7 +45,7 @@ public class ARCImageZoom : UIScrollView, UIScrollViewDelegate {
     
     private func sharedInitialization () -> Void {
         self.delegate = self
-        self.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.minimumZoomScale = 0.5
         self.maximumZoomScale = 4.0
         

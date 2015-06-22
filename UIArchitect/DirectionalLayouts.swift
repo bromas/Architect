@@ -26,7 +26,7 @@ extension Blueprint {
     
     let count = views.count
     var lastManagedView: UIView?
-    for (index, view) in enumerate(views) {
+    for (index, view) in views.enumerate() {
       align(center: view, with: [.X: 0])
       switch count {
       case 1:

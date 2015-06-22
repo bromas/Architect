@@ -13,7 +13,7 @@ public class Blueprint {
   
 }
 
-public func assertSuperview(#forView: UIView) -> UIView {
+public func assertSuperview(forView forView: UIView) -> UIView {
   let superview = forView.superview
   switch superview {
   case .Some(let found):
@@ -25,7 +25,7 @@ public func assertSuperview(#forView: UIView) -> UIView {
 }
 
 public func assertCommonSuperview(forView: UIView, and andView: UIView) -> UIView {
-  let superview = commonSuperview(forView, andView)
+  let superview = commonSuperview(forView, second: andView)
   switch superview {
   case .Some(let found):
     return found

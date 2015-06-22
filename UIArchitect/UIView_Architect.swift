@@ -11,20 +11,20 @@ import UIKit
 
 extension UIView {
     
-    public func preppedForAutoLayout (#inView: UIView) -> UIView {
-        self.setTranslatesAutoresizingMaskIntoConstraints(false)
+    public func preppedForAutoLayout (inView inView: UIView) -> UIView {
+        self.translatesAutoresizingMaskIntoConstraints = false
         inView.addSubview(self)
         return self
     }
     
     public class func autoLayoutView () -> UIView {
-        var view = self()
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let view = self()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
     
     public class func autoLayoutView (inView superview: UIView) -> UIView {
-        var view = self.autoLayoutView()
+        let view = self.autoLayoutView()
         superview.addSubview(view)
         return view
     }

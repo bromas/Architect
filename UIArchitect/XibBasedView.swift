@@ -40,9 +40,9 @@ public class XibBasedView : UIView {
   func commonInitialization () -> Void {
     
     self.backgroundColor = .clearColor()
-    var stringToMessWith = NSStringFromClass(self.classForCoder)
-    var classArray = stringToMessWith.componentsSeparatedByString(".")
-    var classString = classArray.last
+    let stringToMessWith = NSStringFromClass(self.classForCoder)
+    let classArray = stringToMessWith.componentsSeparatedByString(".")
+    let classString = classArray.last
     
     if let className = classString {
       let views = NSBundle.mainBundle().loadNibNamed(className, owner: self, options: nil)

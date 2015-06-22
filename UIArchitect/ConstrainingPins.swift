@@ -13,29 +13,29 @@ public typealias EdgeGuide = (view: UIView, edge: BlueprintGuide)
 import Foundation
 import UIKit
 
-public func pin(#top: UIView, #toBottom: UIView, #magnitude: CGFloat) -> NSLayoutConstraint {
+public func pin(top top: UIView, toBottom: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
   return pin((top, .Top), to: (toBottom, .Bottom), magnitude: magnitude)
 }
 
-public func pin(#right: UIView, #toLeft: UIView, #magnitude: CGFloat) -> NSLayoutConstraint {
+public func pin(right right: UIView, toLeft: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
   return pin((right, .Right), to: (toLeft, .Left), magnitude: magnitude)
 }
 
-public func pin(#bottom: UIView, #toTop: UIView, #magnitude: CGFloat) -> NSLayoutConstraint {
+public func pin(bottom bottom: UIView, toTop: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
   return pin((bottom, .Bottom), to: (toTop, .Top), magnitude: magnitude)
 }
 
-public func pin(#left: UIView, #toRight: UIView, #magnitude: CGFloat) -> NSLayoutConstraint {
+public func pin(left left: UIView, toRight: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
   return pin((left, .Left), to: (toRight, .Right), magnitude: magnitude)
 }
 
-public func pin(view: UIView, #edge:BlueprintGuide, #toGuide: UILayoutSupport, #inController: UIViewController, #constant: CGFloat) -> NSLayoutConstraint {
+public func pin(view: UIView, edge:BlueprintGuide, toGuide: UILayoutSupport, inController: UIViewController, constant: CGFloat) -> NSLayoutConstraint {
   let constraint = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: toGuide, attribute: .Bottom, multiplier: 1.0, constant: constant)
   inController.view.addConstraint(constraint)
   return constraint
 }
 
-public func pin(from: EdgeGuide, #to: EdgeGuide, #magnitude: CGFloat) -> NSLayoutConstraint {
+public func pin(from: EdgeGuide, to: EdgeGuide, magnitude: CGFloat) -> NSLayoutConstraint {
   var newOptions = [BlueprintGuide: ExtendedPinningOptions]()
   newOptions[from.edge] = (to.edge, BlueprintRelation.Equal, magnitude, BlueprintPriority.Required)
   return pin(from.view, to: to.view, withExtendedOptions: newOptions)[from.edge]!
@@ -57,7 +57,7 @@ public func pin(view: UIView, to toView: UIView, withExtendedOptions options: [B
   
   var constraints = [BlueprintGuide: NSLayoutConstraint]()
   
-  for (attribute: BlueprintGuide, with: ExtendedPinningOptions) in options {
+  for (attribute, with): (BlueprintGuide, ExtendedPinningOptions) in options {
     let toEdge = with.toEdge
     let priority = with.priority.float()
     
