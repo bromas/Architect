@@ -62,12 +62,20 @@ class ViewController: UIViewController {
           $0.placeholder = "wat"
         }
         
-        Architect.custom(ColorView(color: .redColor()), inView: $0) {
+        let redView = Architect.custom(ColorView(color: .redColor()), inView: $0) {
           pin(top: $0, toBottom: tField, magnitude: 8.0)
           size($0, with: [.Width: 30])
           equate(heightOf: $0, fromRatioToWidth: 2)
           align(center: $0, with: [.X: 0])
         }
+        
+        Architect.custom(ColorView(color: .grayColor()), inView: $0) {
+          align(center: $0, with: [.X: 0])
+          equate($0, to: redView, withExtendedOptions: [.Width : (.Equal, 0.0, 4.0, .Required)])
+          equate($0, with: [.Height: 30])
+          pin(bottom: $0, toTop: redView, magnitude: 10.0)
+        }
+        
       }
     }
   }
