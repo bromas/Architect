@@ -14,7 +14,7 @@ class ViewController: UIViewController {
   @IBOutlet var aView : UIView!
   var scroll : UIScrollView?
   
-  required init(coder aDecoder: NSCoder) {
+  required internal init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   

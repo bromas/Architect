@@ -28,11 +28,11 @@ public class ARCImageZoom : UIScrollView, UIScrollViewDelegate {
             }
         }
     }
-    
-    required public init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.sharedInitialization()
-    }
+  
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    self.sharedInitialization()
+  }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)

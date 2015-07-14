@@ -12,25 +12,25 @@ import UIKit
 
 class FirstLastNameXibView : XibBasedView {
     
-    @IBOutlet var firstNameLabel : UILabel?
-    @IBOutlet var lastNameLabel : UILabel?
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    override init() {
-        super.init()
-    }
-    
-    func configureWith (firstName firstName :String, lastName :String) -> Void {
-        firstNameLabel?.text = firstName
-        lastNameLabel?.text = lastName
-        self.layoutIfNeeded()
-    }
-    
+//    @IBOutlet var firstNameLabel : UILabel?
+//    @IBOutlet var lastNameLabel : UILabel?
+//    
+//    required init(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
+//    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//    }
+//    
+//    override init() {
+//        super.init()
+//    }
+//    
+//    func configureWith (firstName firstName :String, lastName :String) -> Void {
+//        firstNameLabel?.text = firstName
+//        lastNameLabel?.text = lastName
+//        self.layoutIfNeeded()
+//    }
+  
 }
