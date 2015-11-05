@@ -27,26 +27,26 @@ extension Blueprint {
     let count = views.count
     var lastManagedView: UIView?
     for (index, view) in views.enumerate() {
-      align(center: view, with: [.X: 0])
+      Constrain.align(center: view, with: [.X: 0])
       switch count {
       case 1:
-        inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
+        Constrain.inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
       case 2:
-        inset(views[0], with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
-        pin(top: views[1], toBottom: views[0], magnitude: CGFloat(spaced))
-        inset(views[1], with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
+        Constrain.inset(views[0], with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
+        Constrain.pin(top: views[1], toBottom: views[0], magnitude: spaced)
+        Constrain.inset(views[1], with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
       default:
         switch index {
         case 0:
-          inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
+          Constrain.inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!])
         case 1...(count-2):
-          pin(top: view, toBottom: lastManagedView!, magnitude: CGFloat(spaced))
-          inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!])
+          Constrain.pin(top: view, toBottom: lastManagedView!, magnitude: spaced)
+          Constrain.inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!])
         case count-1:
-          pin((view, .Top), to: (lastManagedView!, .Bottom), magnitude: CGFloat(spaced))
-          inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
+          Constrain.pin((view, .Top), to: (lastManagedView!, .Bottom), magnitude: CGFloat(spaced))
+          Constrain.inset(view, with: [.Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
         default:
-          inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
+          Constrain.inset(view, with: [.Top: with[.Top]!, .Left: with[.Left]!, .Right: with[.Right]!, .Bottom: with[.Bottom]!])
         }
       }
       lastManagedView = view
