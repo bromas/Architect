@@ -30,6 +30,7 @@
 		D32BAFD91A33FEDC00894407 /* BlueprintOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B12361197B4B530044AB40 /* BlueprintOptions.swift */; };
 		D373851E1AFB2EF90006766C /* ConstrainingEquate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373851C1AFB2DD20006766C /* ConstrainingEquate.swift */; };
 		D38141421AFB0D5700022F35 /* TextFieldArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */; };
+		D38CAA761BF6613B00904D96 /* ConstrainingCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CAA741BF660C800904D96 /* ConstrainingCenter.swift */; };
 		D39DF1C819E321AC00839249 /* SomeXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39DF1C719E321AC00839249 /* SomeXibView.xib */; };
 		D39DF1CA19E321BA00839249 /* SomeXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DF1C919E321BA00839249 /* SomeXibView.swift */; };
 		D39DF1CE19E42DA700839249 /* ARCImageZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DF1CD19E42DA700839249 /* ARCImageZoom.swift */; };
@@ -99,6 +100,7 @@
 		D32BAFBC1A33FEC500894407 /* ArchitectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectTests.swift; sourceTree = "<group>"; };
 		D373851C1AFB2DD20006766C /* ConstrainingEquate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingEquate.swift; sourceTree = "<group>"; };
 		D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldArchitectures.swift; sourceTree = "<group>"; };
+		D38CAA741BF660C800904D96 /* ConstrainingCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingCenter.swift; sourceTree = "<group>"; };
 		D39DF1C719E321AC00839249 /* SomeXibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SomeXibView.xib; sourceTree = "<group>"; };
 		D39DF1C919E321BA00839249 /* SomeXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeXibView.swift; sourceTree = "<group>"; };
 		D39DF1CD19E42DA700839249 /* ARCImageZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCImageZoom.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				D3C6E4011973955D007A3990 /* ConstrainingInsets.swift */,
 				D3B2FDAA198D1D52007B2466 /* ConstrainingPins.swift */,
 				D373851C1AFB2DD20006766C /* ConstrainingEquate.swift */,
+				D38CAA741BF660C800904D96 /* ConstrainingCenter.swift */,
 			);
 			name = Constraining;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				D32BAFC91A33FED500894407 /* CustomArchitectures.swift in Sources */,
 				D38141421AFB0D5700022F35 /* TextFieldArchitectures.swift in Sources */,
 				D32BAFCC1A33FED500894407 /* LabelArchitectures.swift in Sources */,
+				D38CAA761BF6613B00904D96 /* ConstrainingCenter.swift in Sources */,
 				D32BAFCF1A33FED500894407 /* ConstrainingSize.swift in Sources */,
 				D32BAFD01A33FED500894407 /* ConstrainingAlign.swift in Sources */,
 				D32BAFD81A33FEDC00894407 /* Blueprint.swift in Sources */,
