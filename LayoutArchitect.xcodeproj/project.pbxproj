@@ -31,6 +31,10 @@
 		D373851E1AFB2EF90006766C /* ConstrainingEquate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373851C1AFB2DD20006766C /* ConstrainingEquate.swift */; };
 		D38141421AFB0D5700022F35 /* TextFieldArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */; };
 		D38CAA761BF6613B00904D96 /* ConstrainingCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CAA741BF660C800904D96 /* ConstrainingCenter.swift */; };
+		D38CAA7B1BF9521F00904D96 /* StackArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CAA791BF9506300904D96 /* StackArchitectures.swift */; };
+		D38CAA7E1BF955BC00904D96 /* CommonArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CAA7C1BF9554700904D96 /* CommonArchitectures.swift */; };
+		D38CAA871BF964E300904D96 /* XibViewArchitectures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CAA851BF961F800904D96 /* XibViewArchitectures.swift */; };
+		D38CAA881BF9659000904D96 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CAA831BF95DF500904D96 /* XibView.swift */; };
 		D39DF1C819E321AC00839249 /* SomeXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39DF1C719E321AC00839249 /* SomeXibView.xib */; };
 		D39DF1CA19E321BA00839249 /* SomeXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DF1C919E321BA00839249 /* SomeXibView.swift */; };
 		D39DF1CE19E42DA700839249 /* ARCImageZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DF1CD19E42DA700839249 /* ARCImageZoom.swift */; };
@@ -101,6 +105,10 @@
 		D373851C1AFB2DD20006766C /* ConstrainingEquate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingEquate.swift; sourceTree = "<group>"; };
 		D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldArchitectures.swift; sourceTree = "<group>"; };
 		D38CAA741BF660C800904D96 /* ConstrainingCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainingCenter.swift; sourceTree = "<group>"; };
+		D38CAA791BF9506300904D96 /* StackArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackArchitectures.swift; sourceTree = "<group>"; };
+		D38CAA7C1BF9554700904D96 /* CommonArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonArchitectures.swift; sourceTree = "<group>"; };
+		D38CAA831BF95DF500904D96 /* XibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		D38CAA851BF961F800904D96 /* XibViewArchitectures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewArchitectures.swift; sourceTree = "<group>"; };
 		D39DF1C719E321AC00839249 /* SomeXibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SomeXibView.xib; sourceTree = "<group>"; };
 		D39DF1C919E321BA00839249 /* SomeXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeXibView.swift; sourceTree = "<group>"; };
 		D39DF1CD19E42DA700839249 /* ARCImageZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCImageZoom.swift; sourceTree = "<group>"; };
@@ -211,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				D3FF7B52198D400C0069A08C /* XibBasedView.swift */,
+				D38CAA831BF95DF500904D96 /* XibView.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -225,6 +234,9 @@
 				D3C6E3F81973835D007A3990 /* TextViewArchitectures.swift */,
 				D3C6E3FB19738BDE007A3990 /* ButtonArchitectures.swift */,
 				D38141411AFB0D5700022F35 /* TextFieldArchitectures.swift */,
+				D38CAA791BF9506300904D96 /* StackArchitectures.swift */,
+				D38CAA7C1BF9554700904D96 /* CommonArchitectures.swift */,
+				D38CAA851BF961F800904D96 /* XibViewArchitectures.swift */,
 			);
 			name = Architecting;
 			sourceTree = "<group>";
@@ -552,7 +564,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D32BAFD71A33FEDC00894407 /* Constrain.swift in Sources */,
+				D38CAA871BF964E300904D96 /* XibViewArchitectures.swift in Sources */,
 				D32BAFD31A33FEDC00894407 /* XibBasedView.swift in Sources */,
+				D38CAA881BF9659000904D96 /* XibView.swift in Sources */,
 				D32BAFD91A33FEDC00894407 /* BlueprintOptions.swift in Sources */,
 				D32BAFD11A33FED500894407 /* ConstrainingInsets.swift in Sources */,
 				D32BAFC91A33FED500894407 /* CustomArchitectures.swift in Sources */,
@@ -568,9 +582,11 @@
 				D32BAFCD1A33FED500894407 /* TextViewArchitectures.swift in Sources */,
 				D32BAFD51A33FEDC00894407 /* UIView_Architect.swift in Sources */,
 				D32BAFCE1A33FED500894407 /* ButtonArchitectures.swift in Sources */,
+				D38CAA7B1BF9521F00904D96 /* StackArchitectures.swift in Sources */,
 				D32BAFD21A33FED500894407 /* ConstrainingPins.swift in Sources */,
 				D32BAFD61A33FEDC00894407 /* Architect.swift in Sources */,
 				D3E581B11AAD5BC300D5A933 /* EmbedArchitectures.swift in Sources */,
+				D38CAA7E1BF955BC00904D96 /* CommonArchitectures.swift in Sources */,
 				D32BAFCB1A33FED500894407 /* ImageViewArchitectures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
