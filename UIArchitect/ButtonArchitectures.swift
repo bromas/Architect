@@ -18,17 +18,17 @@ extension Architect {
     return self.custom(UIButton(type: type) as UIButton, inView: view)
   }
   
-  public class func button (title: String, target: AnyObject?, action: Selector, inView view: UIView, construct: ((label: UIButton) -> Void)) -> UIButton {
-    let button = UIButton(type: .System)
-    button.setTitle(title, forState: .Normal)
-    button.addTarget(target, action: action, forControlEvents: .TouchUpInside)
+  public class func button (title: String, target: AnyObject?, action: Selector, inView view: UIView, construct: ((_ label: UIButton) -> Void)) -> UIButton {
+    let button = UIButton(type: .system)
+    button.setTitle(title, for: .normal)
+    button.addTarget(target, action: action, for: .touchUpInside)
     return self.custom(button, inView: view, construct: construct)
   }
   
   public class func button (title: String, target: AnyObject?, action: Selector, inView view: UIView) -> UIButton {
-    let button = UIButton(type: .System)
-    button.setTitle(title, forState: .Normal)
-    button.addTarget(target, action: action, forControlEvents: .TouchUpInside)
+    let button = UIButton(type: .system)
+    button.setTitle(title, for: .normal)
+    button.addTarget(target, action: action, for: .touchUpInside)
     return self.custom(button, inView: view)
   }
   

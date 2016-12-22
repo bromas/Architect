@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-public enum XibLoadError: ErrorType {
-  case NoSuchXib
+public enum XibLoadError: Error {
+  case noSuchXib
 }
 
 public class XibView<T: UIView> {
@@ -19,13 +19,13 @@ public class XibView<T: UIView> {
   
   public static func build(owner: AnyObject!) throws -> T {
     let fullName: String = NSStringFromClass(T.self)
-    let truncName = fullName.componentsSeparatedByString(".").last
-    let bundle = NSBundle.mainBundle()
-    let xib = bundle.loadNibNamed(truncName, owner: owner, options: .None)
-    if let result = xib[0] as? T {
+    let truncName = fullName.components(separatedBy: ".").last ?? ""
+    let bundle = Bundle.main
+    let xib = bundle.loadNibNamed(truncName, owner: owner, options: .none)
+    if let result = xib?[0] as? T {
       return result
     } else {
-      throw XibLoadError.NoSuchXib
+      throw XibLoadError.noSuchXib
     }
   }
   
@@ -35,13 +35,13 @@ public class XibView<T: UIView> {
   
   public func build() throws -> T {
     let fullName: String = NSStringFromClass(T.self)
-    let truncName = fullName.componentsSeparatedByString(".").last
-    let bundle = NSBundle.mainBundle()
-    let xib = bundle.loadNibNamed(truncName, owner: ownerProperty, options: .None)
-    if let result = xib[0] as? T {
+    let truncName = fullName.components(separatedBy: ".").last ?? ""
+    let bundle = Bundle.main
+    let xib = bundle.loadNibNamed(truncName, owner: ownerProperty, options: .none)
+    if let result = xib?[0] as? T {
       return result
     } else {
-      throw XibLoadError.NoSuchXib
+      throw XibLoadError.noSuchXib
     }
   }
   

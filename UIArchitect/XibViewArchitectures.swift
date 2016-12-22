@@ -10,9 +10,9 @@ import Foundation
 
 extension Architect {
   
-  public static func xib<T: UIView>(view: XibView<T>, construct: ((xib: T) -> Void) = { _ in }) throws -> T {
+  public static func xib<T: UIView>(view: XibView<T>, construct: ((_ xib: T) -> Void) = { _ in }) throws -> T {
     let finalView = try view.build()
-    construct(xib: finalView)
+    construct(finalView)
     return finalView
   }
   

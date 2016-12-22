@@ -10,21 +10,21 @@ import Foundation
 
 extension Architect {
   
-  public class func stack(inView view: UIView, construct: ((label: UIStackView) -> Void)) -> UIStackView {
+  public class func stack(inView view: UIView, construct: ((_ label: UIStackView) -> Void)) -> UIStackView {
     let stack = UIStackView()
-    stack.axis = .Vertical
+    stack.axis = .vertical
     return self.custom(stack, inView: view, construct: construct)
   }
   
-  public class func verticalStack(inView view: UIView, construct: ((label: UIStackView) -> Void)) -> UIStackView {
+  public class func verticalStack(inView view: UIView, construct: ((_ label: UIStackView) -> Void)) -> UIStackView {
     let stack = UIStackView()
-    stack.axis = .Vertical
+    stack.axis = .vertical
     return self.custom(stack, inView: view, construct: construct)
   }
   
-  public class func horizontalStack(inView view: UIView, construct: ((label: UIStackView) -> Void)) -> UIStackView {
+  public class func horizontalStack(inView view: UIView, construct: ((_ label: UIStackView) -> Void)) -> UIStackView {
     let stack = UIStackView()
-    stack.axis = .Horizontal
+    stack.axis = .horizontal
     return self.custom(stack, inView: view, construct: construct)
   }
   
