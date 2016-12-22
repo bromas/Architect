@@ -9,62 +9,62 @@
 import Foundation
 import UIKit
 
-public class Blueprint {
+open class Blueprint {
   
 }
 
-public func assertSuperview(forView forView: UIView) -> UIView {
+public func assertSuperview(forView: UIView) -> UIView {
   let superview = forView.superview
   switch superview {
-  case .Some(let found):
+  case .some(let found):
     return found
-  case .None:
+  case .none:
     assert(false, "\(forView) did not have a required superview.")
   }
   return UIView()
 }
 
-public func assertCommonSuperview(forView: UIView, and andView: UIView) -> UIView {
+public func assertCommonSuperview(_ forView: UIView, and andView: UIView) -> UIView {
   let superview = commonSuperview(forView, second: andView)
   switch superview {
-  case .Some(let found):
+  case .some(let found):
     return found
-  case .None:
+  case .none:
     assert(false, "\(forView) and \(andView) do not share a common superview.")
   }
   return UIView()
 }
 
-public func commonSuperview(first: UIView, second: UIView) -> UIView?
+public func commonSuperview(_ first: UIView, second: UIView) -> UIView?
 {
   var views = Set<UIView>()
   
   var firstTree: UIView? = first
   var secondTree: UIView? = second
   
-  while (firstTree != .None || secondTree != .None) {
+  while (firstTree != .none || secondTree != .none) {
     switch firstTree {
-    case let .Some(view):
+    case let .some(view):
       if views.contains(view) {
         return view
       }
       views.insert(view)
       firstTree = view.superview
-    case .None:
+    case .none:
       assert(true, "")
     }
     
     switch secondTree {
-    case let .Some(view):
+    case let .some(view):
       if views.contains(view) {
         return view
       }
       views.insert(view)
       secondTree = view.superview
-    case .None:
+    case .none:
       assert(true, "")
     }
   }
   
-  return .None
+  return .none
 }

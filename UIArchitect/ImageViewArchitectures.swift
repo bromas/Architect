@@ -10,7 +10,7 @@ import Foundation
 
 extension Architect {
   
-  public class func imageView (inView view: UIView, construct: ((label: UIImageView) -> Void)) -> UIImageView {
+  public class func imageView (inView view: UIView, construct: ((_ label: UIImageView) -> Void)) -> UIImageView {
     return self.custom(UIImageView(), inView: view, construct: construct)
   }
   

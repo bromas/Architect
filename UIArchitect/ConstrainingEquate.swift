@@ -15,59 +15,59 @@ import UIKit
 extension Constrain {
   
   public static func equate(heightOf view: UIView, fromRatioToWidth: CGFloat) -> NSLayoutConstraint {
-    let constraint = NSLayoutConstraint(item: view, attribute: .Height, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: fromRatioToWidth, constant: 0)
+    let constraint = NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: view, attribute: .width, multiplier: fromRatioToWidth, constant: 0)
     view.addConstraint(constraint)
     return constraint
   }
   
   public static func equate(widthOf view: UIView, fromRatioToHeight: CGFloat) -> NSLayoutConstraint {
-    let constraint = NSLayoutConstraint(item: view, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Height, multiplier: fromRatioToHeight, constant: 0)
+    let constraint = NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: view, attribute: .height, multiplier: fromRatioToHeight, constant: 0)
     view.addConstraint(constraint)
     return constraint
   }
   
-  public static func equate(view: UIView, with options: [BlueprintMeasure: CGFloat]) -> EquateResult {
+  public static func equate(_ view: UIView, with options: [BlueprintMeasure: CGFloat]) -> EquateResult {
     var newOptions = [BlueprintMeasure: ExtendedEquateOptions]()
     for (measure, float) in options {
-      let option = (BlueprintRelation.Equal, options[measure]!, float, BlueprintPriority.Required)
+      let option = (BlueprintRelation.equal, options[measure]!, float, BlueprintPriority.required)
       newOptions[measure] = option
     }
     return equate(view, to: view, withExtendedOptions: newOptions)
   }
   
-  public static func equate(view: UIView, withExtendedOptions options: [BlueprintMeasure: ExtendedEquateOptions]) -> EquateResult {
+  public static func equate(_ view: UIView, withExtendedOptions options: [BlueprintMeasure: ExtendedEquateOptions]) -> EquateResult {
     return equate(view, to: view, withExtendedOptions: options)
   }
   
-  public static func equate(view: UIView, to toView: UIView, with options: [BlueprintMeasure: CGFloat]) -> EquateResult {
+  public static func equate(_ view: UIView, to toView: UIView, with options: [BlueprintMeasure: CGFloat]) -> EquateResult {
     var newOptions = [BlueprintMeasure: ExtendedEquateOptions]()
     for (measure, float) in options {
-      let option = (BlueprintRelation.Equal, options[measure]!, float, BlueprintPriority.Required)
+      let option = (BlueprintRelation.equal, options[measure]!, float, BlueprintPriority.required)
       newOptions[measure] = option
     }
     return equate(view, to: toView, withExtendedOptions: newOptions)
   }
   
-  public static func equate(view: UIView, to toView: UIView, withExtendedOptions options: [BlueprintMeasure: ExtendedEquateOptions]) -> EquateResult {
+  public static func equate(_ view: UIView, to toView: UIView, withExtendedOptions options: [BlueprintMeasure: ExtendedEquateOptions]) -> EquateResult {
     
     let superview = assertCommonSuperview(view, and: toView)
     var constraints = EquateResult()
-    let finalToView: UIView? = view == toView ? .None : toView
+    let finalToView: UIView? = view == toView ? .none : toView
     
     for (attribute, with): (BlueprintMeasure, ExtendedEquateOptions) in options {
       let relation = with.relation.layoutRelation()
       let priority = with.priority.float()
       switch attribute {
-      case .Width:
-        let constraint = NSLayoutConstraint(item: view, attribute: .Width, relatedBy: relation, toItem: finalToView, attribute: .Width, multiplier: with.multiplier, constant: with.magnitude)
+      case .width:
+        let constraint = NSLayoutConstraint(item: view, attribute: .width, relatedBy: relation, toItem: finalToView, attribute: .width, multiplier: with.multiplier, constant: with.magnitude)
         constraint.priority = priority
-        constraints[.Width] = constraint
-        superview.addConstraint(constraints[.Width]!)
-      case .Height:
-        let constraint = NSLayoutConstraint(item: view, attribute: .Height, relatedBy: relation, toItem: finalToView, attribute: .Height, multiplier: with.multiplier, constant: with.magnitude)
+        constraints[.width] = constraint
+        superview.addConstraint(constraints[.width]!)
+      case .height:
+        let constraint = NSLayoutConstraint(item: view, attribute: .height, relatedBy: relation, toItem: finalToView, attribute: .height, multiplier: with.multiplier, constant: with.magnitude)
         constraint.priority = priority
-        constraints[.Height] = constraint
-        superview.addConstraint(constraints[.Height]!)
+        constraints[.height] = constraint
+        superview.addConstraint(constraints[.height]!)
       }
     }
     

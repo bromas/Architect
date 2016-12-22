@@ -11,7 +11,7 @@ import UIKit
 
 extension Architect {
   
-  public class func view (inView view: UIView, construct: (forView: UIView) -> Void) -> UIView {
+  public class func view (inView view: UIView, construct: (_ forView: UIView) -> Void) -> UIView {
     return self.custom(UIView(), inView: view, construct: construct)
   }
   

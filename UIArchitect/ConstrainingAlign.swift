@@ -14,19 +14,19 @@ import UIKit
 extension Constrain {
   
   public static func align(top view: UIView, with: UIView, constant: CGFloat) -> NSLayoutConstraint {
-    return pin((view, .Top), to: (with, .Top), magnitude: constant)
+    return pin((view, .top), to: (with, .top), magnitude: constant)
   }
   
   public static func align(left view: UIView, with: UIView, constant: CGFloat) -> NSLayoutConstraint {
-    return pin((view, .Left), to: (with, .Left), magnitude: constant)
+    return pin((view, .left), to: (with, .left), magnitude: constant)
   }
   
   public static func align(bottom view: UIView, with: UIView, constant: CGFloat) -> NSLayoutConstraint {
-    return pin((view, .Bottom), to: (with, .Bottom), magnitude: constant)
+    return pin((view, .bottom), to: (with, .bottom), magnitude: constant)
   }
   
   public static func align(right view: UIView, with: UIView, constant: CGFloat) -> NSLayoutConstraint {
-    return pin((view, .Right), to: (with, .Right), magnitude: constant)
+    return pin((view, .right), to: (with, .right), magnitude: constant)
   }
   
   public static func align(center view: UIView, with attributes: [BlueprintCoordinate: CGFloat]) -> CenterResult {
@@ -40,12 +40,12 @@ extension Constrain {
     
     for (option, magnitude) in attributes {
       switch option {
-      case .X:
-        constraints[.X] = (NSLayoutConstraint(item: view, attribute: .CenterX, relatedBy: .Equal, toItem: fromView, attribute: .CenterX, multiplier: 1.0, constant: CGFloat(magnitude)))
-        superview!.addConstraint(constraints[.X]!)
-      case .Y:
-        constraints[.Y] = (NSLayoutConstraint(item: view, attribute: .CenterY, relatedBy: .Equal, toItem: fromView, attribute: .CenterY, multiplier: 1.0, constant: CGFloat(magnitude)))
-        superview!.addConstraint(constraints[.Y]!)
+      case .x:
+        constraints[.x] = (NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: fromView, attribute: .centerX, multiplier: 1.0, constant: CGFloat(magnitude)))
+        superview!.addConstraint(constraints[.x]!)
+      case .y:
+        constraints[.y] = (NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: fromView, attribute: .centerY, multiplier: 1.0, constant: CGFloat(magnitude)))
+        superview!.addConstraint(constraints[.y]!)
       }
     }
     

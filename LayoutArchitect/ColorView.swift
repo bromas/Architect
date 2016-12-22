@@ -15,7 +15,7 @@ class ColorView : UIView {
     }
     
     init(color: UIColor) {
-        super.init(frame: CGRectMake(0, 0, 50, 50))
+        super.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         self.backgroundColor = color
     }
 }
