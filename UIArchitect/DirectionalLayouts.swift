@@ -27,26 +27,26 @@ extension Blueprint {
     let count = views.count
     var lastManagedView: UIView?
     for (index, view) in views.enumerated() {
-      Constrain.align(center: view, with: [.x: 0])
+      _ = Constrain.align(center: view, with: [.x: 0])
       switch count {
       case 1:
-        Constrain.inset(view, with: [.top: with[.top]!, .left: with[.left]!, .right: with[.right]!, .bottom: with[.bottom]!])
+        _ = Constrain.inset(view, with: [.top: with[.top]!, .left: with[.left]!, .right: with[.right]!, .bottom: with[.bottom]!])
       case 2:
-        Constrain.inset(views[0], with: [.top: with[.top]!, .left: with[.left]!, .right: with[.right]!])
-        Constrain.pin(top: views[1], toBottom: views[0], magnitude: spaced)
-        Constrain.inset(views[1], with: [.left: with[.left]!, .right: with[.right]!, .bottom: with[.bottom]!])
+        _ = Constrain.inset(views[0], with: [.top: with[.top]!, .left: with[.left]!, .right: with[.right]!])
+        _ = Constrain.pin(top: views[1], toBottom: views[0], magnitude: spaced)
+        _ = Constrain.inset(views[1], with: [.left: with[.left]!, .right: with[.right]!, .bottom: with[.bottom]!])
       default:
         switch index {
         case 0:
-          Constrain.inset(view, with: [.top: with[.top]!, .left: with[.left]!, .right: with[.right]!])
+          _ = Constrain.inset(view, with: [.top: with[.top]!, .left: with[.left]!, .right: with[.right]!])
         case 1...(count-2):
-          Constrain.pin(top: view, toBottom: lastManagedView!, magnitude: spaced)
-          Constrain.inset(view, with: [.left: with[.left]!, .right: with[.right]!])
+          _ = Constrain.pin(top: view, toBottom: lastManagedView!, magnitude: spaced)
+          _ = Constrain.inset(view, with: [.left: with[.left]!, .right: with[.right]!])
         case count-1:
-          Constrain.pin((view, .top), to: (lastManagedView!, .bottom), magnitude: CGFloat(spaced))
-          Constrain.inset(view, with: [.left: with[.left]!, .right: with[.right]!, .bottom: with[.bottom]!])
+          _ = Constrain.pin((view, .top), to: (lastManagedView!, .bottom), magnitude: CGFloat(spaced))
+          _ = Constrain.inset(view, with: [.left: with[.left]!, .right: with[.right]!, .bottom: with[.bottom]!])
         default:
-          Constrain.inset(view, with: [.top: with[.top]!, .left: with[.left]!, .right: with[.right]!, .bottom: with[.bottom]!])
+          _ = Constrain.inset(view, with: [.top: with[.top]!, .left: with[.left]!, .right: with[.right]!, .bottom: with[.bottom]!])
         }
       }
       lastManagedView = view

@@ -10,33 +10,33 @@ import Foundation
 
 extension Architect {
   
-  public static func verticalScrollingStack(inView view: UIView, construct: ((scroll: UIScrollView, stack: UIStackView) -> Void) = { _ in }) -> (UIScrollView!, UIStackView!) {
+  public static func verticalScrollingStack(inView view: UIView, construct: ((_ scroll: UIScrollView, _ stack: UIStackView) -> Void) = { _ in }) -> (UIScrollView, UIStackView) {
     
     let (scroll, stack) = Architect.scrollingStack(inView: view)
-    stack.axis = .Vertical
-    construct(scroll: scroll, stack: stack)
+    stack.axis = .vertical
+    construct(scroll, stack)
     
     return (scroll, stack)
   }
   
-  public static func horizontalScrollingStack(inView view: UIView, construct: ((scroll: UIScrollView, stack: UIStackView) -> Void) = { _ in }) -> (UIScrollView!, UIStackView!) {
+  public static func horizontalScrollingStack(inView view: UIView, construct: ((_ scroll: UIScrollView, _ stack: UIStackView) -> Void) = { _ in }) -> (UIScrollView, UIStackView) {
     
     let (scroll, stack) = Architect.scrollingStack(inView: view)
-    stack.axis = .Horizontal
-    construct(scroll: scroll, stack: stack)
+    stack.axis = .horizontal
+    construct(scroll, stack)
     
     return (scroll, stack)
   }
   
-  public static func scrollingStack(inView view: UIView, construct: ((scroll: UIScrollView, stack: UIStackView) -> Void) = { _ in }) -> (UIScrollView!, UIStackView!) {
+  public static func scrollingStack(inView view: UIView, construct: ((_ scroll: UIScrollView, _ stack: UIStackView) -> Void) = { _ in }) -> (UIScrollView, UIStackView) {
     
     let scroll = Architect.custom(UIScrollView(), inView: view)
     
     let stack = Architect.stack(inView: scroll) {
-      Constrain.inset($0, with: [.Left: 0, .Right: 0, .Top: 0, .Bottom: 0])
+      _ = Constrain.inset($0, with: [.left: 0, .right: 0, .top: 0, .bottom: 0])
     }
     
-    construct(scroll: scroll, stack: stack)
+    construct(scroll, stack)
     
     return (scroll, stack)
   }
