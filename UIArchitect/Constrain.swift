@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-public class Constrain {
+open class Constrain {
   
-  public class func printDocumentation () -> Void {
+  open class func printDocumentation () -> Void {
     print("The Constrain class generates and adds NSLayoutConstraints \n")
     print("--------------------------------------------")
     print("Pin - connects edges of sibling views")
@@ -20,7 +20,7 @@ public class Constrain {
     print("Size - set size attributes Width and Height")
   }
   
-  public class func construct (bluePrints: [NSLayoutConstraint], inView view: UIView) -> Void {
+  open class func construct (_ bluePrints: [NSLayoutConstraint], inView view: UIView) -> Void {
     view.addConstraints(bluePrints)
   }
   

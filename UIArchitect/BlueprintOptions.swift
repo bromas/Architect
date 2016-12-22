@@ -10,102 +10,102 @@ import Foundation
 import UIKit
 
 public enum BlueprintGuide {
-  case Top
-  case Bottom
-  case Left
-  case Right
-  case CenterX
-  case CenterY
+  case top
+  case bottom
+  case left
+  case right
+  case centerX
+  case centerY
   
   public func layoutAttribute () -> NSLayoutAttribute {
     switch self {
-    case .Top:
-      return NSLayoutAttribute.Top
-    case .Right:
-      return NSLayoutAttribute.Right
-    case .Bottom:
-      return NSLayoutAttribute.Bottom
-    case .Left:
-      return NSLayoutAttribute.Left
-    case .CenterX:
-      return NSLayoutAttribute.CenterX
-    case .CenterY:
-      return NSLayoutAttribute.CenterY
+    case .top:
+      return NSLayoutAttribute.top
+    case .right:
+      return NSLayoutAttribute.right
+    case .bottom:
+      return NSLayoutAttribute.bottom
+    case .left:
+      return NSLayoutAttribute.left
+    case .centerX:
+      return NSLayoutAttribute.centerX
+    case .centerY:
+      return NSLayoutAttribute.centerY
     }
   }
   
-  public func centerAttributeFromGuide (guide: BlueprintGuide) -> NSLayoutAttribute {
+  public func centerAttributeFromGuide (_ guide: BlueprintGuide) -> NSLayoutAttribute {
     switch self {
-    case .Top:
-      return NSLayoutAttribute.Top
-    case .Right:
-      return NSLayoutAttribute.Right
-    case .Bottom:
-      return NSLayoutAttribute.Bottom
-    case .Left:
-      return NSLayoutAttribute.Left
-    case .CenterX:
-      return NSLayoutAttribute.CenterX
-    case .CenterY:
-      return NSLayoutAttribute.CenterY
+    case .top:
+      return NSLayoutAttribute.top
+    case .right:
+      return NSLayoutAttribute.right
+    case .bottom:
+      return NSLayoutAttribute.bottom
+    case .left:
+      return NSLayoutAttribute.left
+    case .centerX:
+      return NSLayoutAttribute.centerX
+    case .centerY:
+      return NSLayoutAttribute.centerY
     }
   }
 }
 
 public enum BlueprintMeasure {
-  case Width
-  case Height
+  case width
+  case height
 }
 
 public enum BlueprintCoordinate {
-  case X
-  case Y
+  case x
+  case y
 }
 
 public enum BlueprintPriority {
-  case Required
-  case High
-  case Medium
-  case Low
+  case required
+  case high
+  case medium
+  case low
   
   public func float () -> Float {
     switch self {
-    case .Required:
+    case .required:
       return 1000.0
-    case .High:
+    case .high:
       return 750.0
-    case .Medium:
+    case .medium:
       return 500.0
-    case .Low:
+    case .low:
       return 250.0
     }
   }
 }
 
 public enum BlueprintRelation {
-  case Equal
-  case GreaterThanOrEqual
-  case LessThanOrEqual
+  case equal
+  case greaterThanOrEqual
+  case lessThanOrEqual
   
   func string () -> String {
     switch self {
-    case .Equal:
+    case .equal:
       return "=="
-    case .GreaterThanOrEqual:
+    case .greaterThanOrEqual:
       return ">="
-    case .LessThanOrEqual:
+    case .lessThanOrEqual:
       return "<="
     }
   }
   
   public func layoutRelation () -> NSLayoutRelation {
     switch self {
-    case .Equal:
-      return NSLayoutRelation.Equal
-    case .GreaterThanOrEqual:
-      return NSLayoutRelation.GreaterThanOrEqual
-    case .LessThanOrEqual:
-      return NSLayoutRelation.LessThanOrEqual
+    case .equal:
+      return NSLayoutRelation.equal
+    case .greaterThanOrEqual:
+      return NSLayoutRelation.greaterThanOrEqual
+    case .lessThanOrEqual:
+      return NSLayoutRelation.lessThanOrEqual
     }
   }
 }

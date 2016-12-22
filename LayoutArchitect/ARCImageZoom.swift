@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-public class ARCImageZoom : UIScrollView, UIScrollViewDelegate {
+open class ARCImageZoom : UIScrollView, UIScrollViewDelegate {
     
-    public var scrollView : UIScrollView?
+    open var scrollView : UIScrollView?
     var imageView : UIImageView?
-    public var image : UIImage? {
+    open var image : UIImage? {
         get {
             return imageView?.image
         }
@@ -40,12 +40,12 @@ public class ARCImageZoom : UIScrollView, UIScrollViewDelegate {
     }
     
     public init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
     }
     
-    private func sharedInitialization () -> Void {
+    fileprivate func sharedInitialization () -> Void {
         self.delegate = self
-        self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.minimumZoomScale = 0.5
         self.maximumZoomScale = 4.0
         
@@ -53,7 +53,7 @@ public class ARCImageZoom : UIScrollView, UIScrollViewDelegate {
         self.addSubview(self.imageView!)
     }
     
-    public func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    open func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.imageView
     }
     

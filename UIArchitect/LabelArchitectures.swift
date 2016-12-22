@@ -9,18 +9,18 @@
 import Foundation
 import UIKit
 
-public class ArchitectLabel : UILabel {
+open class ArchitectLabel : UILabel {
   
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
   init () {
-    super.init(frame: CGRectZero)
+    super.init(frame: CGRect.zero)
     self.numberOfLines = 0
   }
   
-  override public func layoutSubviews() {
+  override open func layoutSubviews() {
     self.preferredMaxLayoutWidth = self.frame.size.width
     super.layoutSubviews()
   }
@@ -29,7 +29,7 @@ public class ArchitectLabel : UILabel {
 
 extension Architect {
   
-  public class func label (inView view: UIView, construct: ((label: UILabel) -> Void)) -> ArchitectLabel {
+  public class func label (inView view: UIView, construct: ((_ label: UILabel) -> Void)) -> ArchitectLabel {
     return self.custom(ArchitectLabel(), inView: view, construct: construct)
   }
   

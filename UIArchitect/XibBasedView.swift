@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class XibBasedView : UIView {
+open class XibBasedView : UIView {
   
 //  public var nibView : UIView?
 //  

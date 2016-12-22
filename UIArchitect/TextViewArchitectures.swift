@@ -10,7 +10,7 @@ import Foundation
 
 extension Architect {
   
-  public class func textView (inView view: UIView, construct: ((label: UITextView) -> Void)) -> UITextView {
+  public class func textView (inView view: UIView, construct: ((_ label: UITextView) -> Void)) -> UITextView {
     return self.custom(UITextView(), inView: view, construct: construct)
   }
   

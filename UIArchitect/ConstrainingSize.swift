@@ -22,16 +22,16 @@ extension Constrain {
 //    return size(view, withExtendedOptions: options)
 //  }
   
-  public static func size(view: UIView, with options: [BlueprintMeasure: CGFloat]) -> SizeResult {
+  public static func size(_ view: UIView, with options: [BlueprintMeasure: CGFloat]) -> SizeResult {
     var newOptions = [BlueprintMeasure: ExtendedSizeOptions]()
     for (measure, float) in options {
-      let option = (BlueprintRelation.Equal, float, BlueprintPriority.Required)
+      let option = (BlueprintRelation.equal, float, BlueprintPriority.required)
       newOptions[measure] = option
     }
     return size(view, withExtendedOptions: newOptions)
   }
   
-  public static func size(view: UIView , withExtendedOptions options: [BlueprintMeasure: (relation: BlueprintRelation, magnitude: CGFloat, priority: BlueprintPriority)]) -> SizeResult {
+  public static func size(_ view: UIView , withExtendedOptions options: [BlueprintMeasure: (relation: BlueprintRelation, magnitude: CGFloat, priority: BlueprintPriority)]) -> SizeResult {
     
     var constraints = SizeResult()
     let views = ["view": view]
@@ -40,14 +40,14 @@ extension Constrain {
       let relation = with.relation.string()
       let priority = with.priority.float()
       switch attribute {
-      case .Width:
+      case .width:
         let metrics = ["width": with.magnitude]
-        constraints[.Width] = (NSLayoutConstraint.constraintsWithVisualFormat("H:[view(\(relation)width@\(priority))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)[0])
-        view.addConstraint(constraints[.Width]!)
-      case .Height:
+        constraints[.width] = (NSLayoutConstraint.constraints(withVisualFormat: "H:[view(\(relation)width@\(priority))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)[0])
+        view.addConstraint(constraints[.width]!)
+      case .height:
         let metrics = ["height": with.magnitude]
-        constraints[.Height] = (NSLayoutConstraint.constraintsWithVisualFormat("V:[view(\(relation)height@\(priority))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)[0])
-        view.addConstraint(constraints[.Height]!)
+        constraints[.height] = (NSLayoutConstraint.constraints(withVisualFormat: "V:[view(\(relation)height@\(priority))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)[0])
+        view.addConstraint(constraints[.height]!)
       }
     }
     

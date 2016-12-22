@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 extension Architect {
-  public class func embed<T: UIViewController>(controller: T, withParent: UIViewController, inView: UIView, constructEmbed: (controllerIn: T) -> Void) -> T {
+  public class func embed<T: UIViewController>(_ controller: T, withParent: UIViewController, inView: UIView, constructEmbed: (_ controllerIn: T) -> Void) -> T {
     withParent.addChildViewController(controller)
     controller.view.translatesAutoresizingMaskIntoConstraints = false
     inView.addSubview(controller.view)
-    constructEmbed(controllerIn: controller)
-    controller.didMoveToParentViewController(withParent)
+    constructEmbed(controller)
+    controller.didMove(toParentViewController: withParent)
     return controller
   }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 extension Architect {
   
-  public class func textField (inView view: UIView, construct: ((label: UITextField) -> Void)) -> UITextField {
+  public class func textField (inView view: UIView, construct: ((_ label: UITextField) -> Void)) -> UITextField {
     return self.custom(UITextField(), inView: view, construct: construct)
   }
   

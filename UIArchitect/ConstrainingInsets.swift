@@ -14,7 +14,7 @@ import UIKit
 
 extension Constrain {
   
-  public static func inset(view: UIView, withExtendedOptions options: [BlueprintGuide: (relation: BlueprintRelation, magnitude: CGFloat, priority: BlueprintPriority)]) -> InsetResult {
+  public static func inset(_ view: UIView, withExtendedOptions options: [BlueprintGuide: (relation: BlueprintRelation, magnitude: CGFloat, priority: BlueprintPriority)]) -> InsetResult {
     
     let superview = assertSuperview(forView: view)
     var constraints = InsetResult()
@@ -24,29 +24,29 @@ extension Constrain {
       let insetString = "\(option.relation.string())\(option.magnitude)@\(option.priority.float())"
       
       switch direction {
-      case .Top:
+      case .top:
         formatString = "V:|-(\(insetString))-[forView]"
-      case .Left:
+      case .left:
         formatString = "H:|-(\(insetString))-[forView]"
-      case .Bottom:
+      case .bottom:
         formatString = "V:[forView]-(\(insetString))-|"
-      case .Right:
+      case .right:
         formatString = "H:[forView]-(\(insetString))-|"
-      case .CenterX:
+      case .centerX:
         assert(false, "Do not inset the center coordinate")
-      case .CenterY:
+      case .centerY:
         assert(false, "Do not inset the center coordinate")
       }
       
       let metrics = ["insetSize": option.magnitude]
-      constraints[direction] = (NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: ["forView":view])[0])
+      constraints[direction] = (NSLayoutConstraint.constraints(withVisualFormat: formatString, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: ["forView":view])[0])
       superview.addConstraint(constraints[direction]!)
     }
     
     return constraints
   }
   
-  public static func inset(view: UIView, with options: [BlueprintGuide: CGFloat]) -> InsetResult {
+  public static func inset(_ view: UIView, with options: [BlueprintGuide: CGFloat]) -> InsetResult {
     
     let superview = assertSuperview(forView: view)
     var constraints = InsetResult()
@@ -55,22 +55,22 @@ extension Constrain {
       var formatString: String = ""
       
       switch option {
-      case .Top:
+      case .top:
         formatString = "V:|-(insetSize)-[forView]"
-      case .Left:
+      case .left:
         formatString = "H:|-(insetSize)-[forView]"
-      case .Bottom:
+      case .bottom:
         formatString = "V:[forView]-(insetSize)-|"
-      case .Right:
+      case .right:
         formatString = "H:[forView]-(insetSize)-|"
-      case .CenterX:
+      case .centerX:
         assert(false, "Do not inset the center coordinate")
-      case .CenterY:
+      case .centerY:
         assert(false, "Do not inset the center coordinate")
       }
       
       let metrics = ["insetSize":magnitude]
-      constraints[option] = (NSLayoutConstraint.constraintsWithVisualFormat(formatString, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: ["forView":view])[0])
+      constraints[option] = (NSLayoutConstraint.constraints(withVisualFormat: formatString, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: ["forView":view])[0])
       superview.addConstraint(constraints[option]!)
     }
     

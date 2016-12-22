@@ -15,45 +15,45 @@ import UIKit
 
 extension Constrain {
   
-  public static func pin(top top: UIView, toBottom: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
-    return Constrain.pin((top, .Top), to: (toBottom, .Bottom), magnitude: magnitude)
+  public static func pin(top: UIView, toBottom: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
+    return Constrain.pin((top, .top), to: (toBottom, .bottom), magnitude: magnitude)
   }
   
-  public static func pin(right right: UIView, toLeft: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
-    return Constrain.pin((right, .Right), to: (toLeft, .Left), magnitude: magnitude)
+  public static func pin(right: UIView, toLeft: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
+    return Constrain.pin((right, .right), to: (toLeft, .left), magnitude: magnitude)
   }
   
-  public static func pin(bottom bottom: UIView, toTop: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
-    return Constrain.pin((bottom, .Bottom), to: (toTop, .Top), magnitude: magnitude)
+  public static func pin(bottom: UIView, toTop: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
+    return Constrain.pin((bottom, .bottom), to: (toTop, .top), magnitude: magnitude)
   }
   
-  public static func pin(left left: UIView, toRight: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
-    return Constrain.pin((left, .Left), to: (toRight, .Right), magnitude: magnitude)
+  public static func pin(left: UIView, toRight: UIView, magnitude: CGFloat) -> NSLayoutConstraint {
+    return Constrain.pin((left, .left), to: (toRight, .right), magnitude: magnitude)
   }
   
-  public static func pin(view: UIView, edge:BlueprintGuide, toGuide: UILayoutSupport, inController: UIViewController, constant: CGFloat) -> NSLayoutConstraint {
-    let constraint = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: toGuide, attribute: .Bottom, multiplier: 1.0, constant: constant)
+  public static func pin(_ view: UIView, edge:BlueprintGuide, toGuide: UILayoutSupport, inController: UIViewController, constant: CGFloat) -> NSLayoutConstraint {
+    let constraint = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: toGuide, attribute: .bottom, multiplier: 1.0, constant: constant)
     inController.view.addConstraint(constraint)
     return constraint
   }
   
-  public static func pin(from: EdgeGuide, to: EdgeGuide, magnitude: CGFloat) -> NSLayoutConstraint {
+  public static func pin(_ from: EdgeGuide, to: EdgeGuide, magnitude: CGFloat) -> NSLayoutConstraint {
     var newOptions = [BlueprintGuide: ExtendedPinningOptions]()
-    newOptions[from.edge] = (to.edge, BlueprintRelation.Equal, magnitude, BlueprintPriority.Required)
+    newOptions[from.edge] = (to.edge, BlueprintRelation.equal, magnitude, BlueprintPriority.required)
     return pin(from.view, to: to.view, withExtendedOptions: newOptions)[from.edge]!
   }
   
-  public static func pin(view: UIView, to toView: UIView, with options: [BlueprintGuide: (toEdge: BlueprintGuide, magnitude: CGFloat)]) -> PinResult {
+  public static func pin(_ view: UIView, to toView: UIView, with options: [BlueprintGuide: (toEdge: BlueprintGuide, magnitude: CGFloat)]) -> PinResult {
     var newOptions = [BlueprintGuide: ExtendedPinningOptions]()
     for (guide, option) in options {
-      let newOption = (option.toEdge, BlueprintRelation.Equal, option.magnitude, BlueprintPriority.Required)
+      let newOption = (option.toEdge, BlueprintRelation.equal, option.magnitude, BlueprintPriority.required)
       newOptions[guide] = newOption
     }
     
     return pin(view, to: toView, withExtendedOptions: newOptions)
   }
   
-  public static func pin(view: UIView, to toView: UIView, withExtendedOptions options: [BlueprintGuide: (toEdge: BlueprintGuide, relation: BlueprintRelation, magnitude: CGFloat, priority: BlueprintPriority)]) -> PinResult {
+  public static func pin(_ view: UIView, to toView: UIView, withExtendedOptions options: [BlueprintGuide: (toEdge: BlueprintGuide, relation: BlueprintRelation, magnitude: CGFloat, priority: BlueprintPriority)]) -> PinResult {
     
     let superview = assertCommonSuperview(view, and: toView)
     
